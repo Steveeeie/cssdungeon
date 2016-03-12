@@ -1,0 +1,21 @@
+{
+  "name": "cssdungeon",
+  "version": "1.0.0",
+  "description": "A 3D dungeon scene made entirely with HTML & CSS",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Steveeeie/cssdungeon.git"
+  },
+  "keywords": [
+    "CSS3",
+    "Transforms",
+    "3D",
+  ],
+  "author": "Steve Meredith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Steveeeie/cssdungeon/issues"
+  },
+  "homepage": "https://github.com/Steveeeie/cssdungeon#readme"
+}
