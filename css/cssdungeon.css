@@ -32,29 +32,32 @@ body {
 .floor {
   transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0); }
   .floor .face {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(250, 250, 250, 0.2);
+    background-size: 48px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 3px rgba(250, 250, 250, 0.2);
+    backface-visibility: hidden;
     position: absolute; }
   .floor .cap {
+    background-position: center;
     background-image: url("../assets/textures/floor-top.jpg");
-    background-position: top left;
-    background-size: 10%;
-    height: 500px;
-    width: 500px; }
+    height: 480px;
+    width: 640px; }
   .floor .side {
-    background-image: url("../assets/textures/floor-side.jpg");
-    background-position: top left;
-    background-size: 10%;
-    height: 32px;
-    width: 500px; }
+    background-position: top center;
+    background-image: url("../assets/textures/wall-side.jpg");
+    height: 48px; }
   .floor .top {
-    transform: translate3d(-50%, -50%, 16px); }
+    transform: translate3d(-50%, -50%, 24px); }
   .floor .bottom {
-    transform: translate3d(-50%, -50%, -16px); }
+    transform: translate3d(-50%, -50%, -24px); }
   .floor .front {
-    transform: translate3d(-50%, -50%, 0) translateY(250px) rotateX(270deg); }
+    transform: translate3d(-50%, -50%, 0) translateY(240px) rotateX(270deg);
+    width: 640px; }
   .floor .back {
-    transform: translate3d(-50%, -50%, 0) translateY(-250px) rotateX(270deg) rotateY(180deg); }
+    transform: translate3d(-50%, -50%, 0) translateY(-240px) rotateX(270deg) rotateY(180deg);
+    width: 640px; }
   .floor .left {
-    transform: translate3d(-50%, -50%, 0) translateX(250px) rotateX(270deg) rotateY(90deg); }
+    transform: translate3d(-50%, -50%, 0) translateX(320px) rotateX(270deg) rotateY(90deg);
+    width: 480px; }
   .floor .right {
-    transform: translate3d(-50%, -50%, 0) translateX(-250px) rotateX(270deg) rotateY(270deg); }
+    transform: translate3d(-50%, -50%, 0) translateX(-320px) rotateX(270deg) rotateY(270deg);
+    width: 480px; }

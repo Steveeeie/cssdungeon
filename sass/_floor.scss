@@ -1,11 +1,11 @@
 .floor{
   $settings: (
-    textureSides: 'floor-side.jpg',
+    textureSides: 'wall-side.jpg',
     textureCaps: 'floor-top.jpg',
-    textureTiling: 10,
-    height: 500px,
-    width: 500px,
-    depth: 32px,
+    textureSize: 48px,
+    height: 480px,
+    width: 640px,
+    depth: 48px,
     positionZ: 0,
     positionX: 0,
     positionY: 0,

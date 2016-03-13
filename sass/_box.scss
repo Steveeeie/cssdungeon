@@ -17,24 +17,23 @@
     rotateZ(map-get($settings, rotationZ));
 
   .face{
-    box-shadow: 0 0 20px rgba(0,0,0,0.2), inset 0 0 3px rgba(250,250,250,0.2);
+    background-size: map-get($settings, textureSize);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5), inset 0 0 3px rgba(250,250,250,0.2);
+    backface-visibility: hidden;
     position: absolute;
   }
 
   .cap{
+    background-position: center;
     background-image: url('../assets/textures/' + unquote(map-get($settings, textureCaps)));
-    background-position: top left;
-    background-size: 100% / map-get($settings, textureTiling);
     height: map-get($settings, height);
     width: map-get($settings, width);
   }
 
   .side{
+    background-position: top center;
     background-image: url('../assets/textures/' + unquote(map-get($settings, textureSides)));
-    background-position: top left;
-    background-size: 100% / map-get($settings, textureTiling);
     height: map-get($settings, depth);
-    width: map-get($settings, width);
   }
 
   .top{
@@ -45,15 +44,19 @@
   }
   .front{
     transform: translate3d(-50%, -50%, 0) translateY(map-get($settings, height) /2) rotateX(270deg);
+    width: map-get($settings, width);
   }
   .back{
     transform: translate3d(-50%, -50%, 0) translateY(- map-get($settings, height) /2) rotateX(270deg) rotateY(180deg);
+    width: map-get($settings, width);
   }
   .left {
     transform: translate3d(-50%, -50%, 0) translateX(map-get($settings, width) /2) rotateX(270deg) rotateY(90deg);
+    width: map-get($settings, height);
   }
   .right{
     transform: translate3d(-50%, -50%, 0) translateX( - map-get($settings, width) /2) rotateX(270deg) rotateY(270deg);
+    width: map-get($settings, height);
   }
 
 }
