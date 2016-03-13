@@ -1,0 +1,17 @@
+.floor{
+  $settings: (
+    textureSides: 'floor-side.jpg',
+    textureCaps: 'floor-top.jpg',
+    textureTiling: 10,
+    height: 500px,
+    width: 500px,
+    depth: 32px,
+    positionZ: 0,
+    positionX: 0,
+    positionY: 0,
+    rotationZ: 0,
+    rotationX: 0,
+    rotationY: 0
+  );
+  @include box($settings);
+}
