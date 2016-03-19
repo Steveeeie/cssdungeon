@@ -2,7 +2,7 @@
   background-image: linear-gradient(to bottom,
     rgba(0, 0, 0, $shade),
     rgba(0, 0, 0, $shade)),
-    url('../assets/textures/' + $texture);
+    url('../textures/' + $texture);
   background-size: $texture-size;
   background-position: $texture-pos;
   height: $height;
