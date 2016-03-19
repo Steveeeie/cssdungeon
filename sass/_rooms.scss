@@ -1,10 +1,13 @@
 .room{
 
   @include room-asm(
-    $room-size: 400px
+    $room-size: 300px
   );
 
   &.tomb{
+    @include room-asm(
+      $room-size: 500px
+    );
     transform: translate3D(-200px, -200px, 0);
   }
 
