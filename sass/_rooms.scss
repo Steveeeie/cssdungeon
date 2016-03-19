@@ -1,0 +1,19 @@
+.room{
+
+  @include room-asm(
+    $room-size: 400px
+  );
+
+  &.tomb{
+    transform: translate3D(-200px, -200px, 0);
+  }
+
+  &.dungeon{
+    transform: translate3D(300px, -200px, 0);
+  }
+
+  &.kitchen{
+    transform: translate3D(-200px, 300px, 0);
+  }
+
+}
