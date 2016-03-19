@@ -1,0 +1,267 @@
+html {
+  height: 100%; }
+
+body {
+  background: linear-gradient(#000, #000, #111);
+  height: 100%;
+  overflow: hidden; }
+
+.scene {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 50%;
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateZ(45deg);
+  animation: spin 300s infinite linear; }
+
+@keyframes spin {
+  from {
+    transform: rotateX(45deg) rotateZ(45deg); }
+  to {
+    transform: rotateX(45deg) rotateZ(405deg); } }
+
+.room {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 50%;
+  transform-style: preserve-3d; }
+  .room .floor {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50%;
+    transform-style: preserve-3d; }
+    .room .floor .face-top {
+      background-image: linear-gradient(to bottom, transparent, transparent), url("../assets/textures/floor-top.jpg");
+      background-size: 128px;
+      background-position: center;
+      height: 400px;
+      position: absolute;
+      width: 400px;
+      transform: translate3d(-50%, -50%, 0); }
+    .room .floor .face-bottom {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../assets/textures/none");
+      background-size: 128px;
+      background-position: center;
+      height: 400px;
+      position: absolute;
+      width: 400px;
+      transform: translate3d(-50%, -50%, -128px); }
+    .room .floor .face-front {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/textures/floor-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 128px;
+      position: absolute;
+      width: 400px;
+      transform: translate3d(-50%, -50%, -64px) translateY(200px) rotateX(270deg); }
+    .room .floor .face-back {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/textures/floor-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 128px;
+      position: absolute;
+      width: 400px;
+      transform: translate3d(-50%, -50%, -64px) translateY(-200px) rotateX(270deg) rotateY(180deg); }
+    .room .floor .face-left {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/textures/floor-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 128px;
+      position: absolute;
+      width: 400px;
+      transform: translate3d(-50%, -50%, -64px) translateX(200px) rotateX(270deg) rotateY(90deg); }
+    .room .floor .face-right {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../assets/textures/floor-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 128px;
+      position: absolute;
+      width: 400px;
+      transform: translate3d(-50%, -50%, -64px) translateX(-200px) rotateX(270deg) rotateY(270deg); }
+  .room .wall.top, .room .wall.bottom {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50%;
+    transform-style: preserve-3d; }
+    .room .wall.top .face-top, .room .wall.bottom .face-top {
+      background-image: linear-gradient(to bottom, transparent, transparent), url("../assets/textures/wall-top.jpg");
+      background-size: 128px;
+      background-position: center;
+      height: 36px;
+      position: absolute;
+      width: 304px;
+      transform: translate3d(-50%, -50%, 116px); }
+    .room .wall.top .face-bottom, .room .wall.bottom .face-bottom {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../assets/textures/none");
+      background-size: 128px;
+      background-position: center;
+      height: 36px;
+      position: absolute;
+      width: 304px;
+      transform: translate3d(-50%, -50%, 0); }
+    .room .wall.top .face-front, .room .wall.bottom .face-front {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/textures/wall-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 116px;
+      position: absolute;
+      width: 304px;
+      transform: translate3d(-50%, -50%, 58px) translateY(18px) rotateX(270deg); }
+    .room .wall.top .face-back, .room .wall.bottom .face-back {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/textures/wall-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 116px;
+      position: absolute;
+      width: 304px;
+      transform: translate3d(-50%, -50%, 58px) translateY(-18px) rotateX(270deg) rotateY(180deg); }
+    .room .wall.top .face-left, .room .wall.bottom .face-left {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/textures/wall-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 116px;
+      position: absolute;
+      width: 36px;
+      transform: translate3d(-50%, -50%, 58px) translateX(152px) rotateX(270deg) rotateY(90deg); }
+    .room .wall.top .face-right, .room .wall.bottom .face-right {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../assets/textures/wall-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 116px;
+      position: absolute;
+      width: 36px;
+      transform: translate3d(-50%, -50%, 58px) translateX(-152px) rotateX(270deg) rotateY(270deg); }
+  .room .wall.left, .room .wall.right {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50%;
+    transform-style: preserve-3d; }
+    .room .wall.left .face-top, .room .wall.right .face-top {
+      background-image: linear-gradient(to bottom, transparent, transparent), url("../assets/textures/wall-top.jpg");
+      background-size: 128px;
+      background-position: center;
+      height: 304px;
+      position: absolute;
+      width: 36px;
+      transform: translate3d(-50%, -50%, 116px); }
+    .room .wall.left .face-bottom, .room .wall.right .face-bottom {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../assets/textures/none");
+      background-size: 128px;
+      background-position: center;
+      height: 304px;
+      position: absolute;
+      width: 36px;
+      transform: translate3d(-50%, -50%, 0); }
+    .room .wall.left .face-front, .room .wall.right .face-front {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/textures/wall-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 116px;
+      position: absolute;
+      width: 36px;
+      transform: translate3d(-50%, -50%, 58px) translateY(152px) rotateX(270deg); }
+    .room .wall.left .face-back, .room .wall.right .face-back {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/textures/wall-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 116px;
+      position: absolute;
+      width: 36px;
+      transform: translate3d(-50%, -50%, 58px) translateY(-152px) rotateX(270deg) rotateY(180deg); }
+    .room .wall.left .face-left, .room .wall.right .face-left {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/textures/wall-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 116px;
+      position: absolute;
+      width: 304px;
+      transform: translate3d(-50%, -50%, 58px) translateX(18px) rotateX(270deg) rotateY(90deg); }
+    .room .wall.left .face-right, .room .wall.right .face-right {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../assets/textures/wall-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 116px;
+      position: absolute;
+      width: 304px;
+      transform: translate3d(-50%, -50%, 58px) translateX(-18px) rotateX(270deg) rotateY(270deg); }
+  .room .wall.left {
+    transform: translateX(-176px); }
+  .room .wall.right {
+    transform: translateX(176px); }
+  .room .wall.top {
+    transform: translateY(-176px); }
+  .room .wall.bottom {
+    transform: translateY(176px); }
+  .room .pillar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50%;
+    transform-style: preserve-3d; }
+    .room .pillar .face-top {
+      background-image: linear-gradient(to bottom, transparent, transparent), url("../assets/textures/pillar-top.jpg");
+      background-size: 128px;
+      background-position: center;
+      height: 48px;
+      position: absolute;
+      width: 48px;
+      transform: translate3d(-50%, -50%, 128px); }
+    .room .pillar .face-bottom {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../assets/textures/none");
+      background-size: 128px;
+      background-position: center;
+      height: 48px;
+      position: absolute;
+      width: 48px;
+      transform: translate3d(-50%, -50%, 0); }
+    .room .pillar .face-front {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../assets/textures/pillar-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 128px;
+      position: absolute;
+      width: 48px;
+      transform: translate3d(-50%, -50%, 64px) translateY(24px) rotateX(270deg); }
+    .room .pillar .face-back {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/textures/pillar-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 128px;
+      position: absolute;
+      width: 48px;
+      transform: translate3d(-50%, -50%, 64px) translateY(-24px) rotateX(270deg) rotateY(180deg); }
+    .room .pillar .face-left {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/textures/pillar-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 128px;
+      position: absolute;
+      width: 48px;
+      transform: translate3d(-50%, -50%, 64px) translateX(24px) rotateX(270deg) rotateY(90deg); }
+    .room .pillar .face-right {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../assets/textures/pillar-side.jpg");
+      background-size: 128px;
+      background-position: top center;
+      height: 128px;
+      position: absolute;
+      width: 48px;
+      transform: translate3d(-50%, -50%, 64px) translateX(-24px) rotateX(270deg) rotateY(270deg); }
+    .room .pillar.top-left {
+      transform: translateY(-176px) translateX(-176px); }
+    .room .pillar.top-right {
+      transform: translateY(-176px) translateX(176px); }
+    .room .pillar.bottom-left {
+      transform: translateY(176px) translateX(-176px); }
+    .room .pillar.bottom-right {
+      transform: translateY(176px) translateX(176px); }
+  .room.tomb {
+    transform: translate3D(-200px, -200px, 0); }
+  .room.dungeon {
+    transform: translate3D(300px, -200px, 0); }
+  .room.kitchen {
+    transform: translate3D(-200px, 300px, 0); }

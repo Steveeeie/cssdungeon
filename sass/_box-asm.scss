@@ -1,0 +1,66 @@
+@mixin box-asm(
+  $pivot: "center",
+  $depth: 128px,
+  $height: 128px,
+  $width: 128px,
+  $texture: "box-placeholder.jpg",
+  $texture-top: $texture,
+  $texture-bottom: $texture,
+  $texture-left: $texture,
+  $texture-right: $texture,
+  $texture-front: $texture,
+  $texture-back: $texture,
+  $texture-size: 128px
+){
+
+  @if($pivot == 'top'){
+    $top-z: 0;
+    $bottom-z: - $depth;
+    $sides-z: - $depth /2;
+  }@else if($pivot == 'center'){
+    $top-z: $depth / 2;
+    $bottom-z: - $depth / 2;
+    $sides-z: 0;
+  }@else{
+    $top-z: $depth;
+    $bottom-z: 0;
+    $sides-z: $depth /2;
+  }
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 50%;
+  transform-style: preserve-3d;
+
+  .face-top{
+    @include face-asm(0, $texture-top, $texture-size, center, $height, $width);
+    transform: translate3d(-50%, -50%, $top-z);
+  }
+
+  .face-bottom{
+    @include face-asm(0.9, none, $texture-size, center, $height, $width);
+    transform: translate3d(-50%, -50%, $bottom-z);
+  }
+
+  .face-front{
+    @include face-asm(0.2, $texture-front, $texture-size, top center, $depth, $width);
+    transform: translate3d(-50%, -50%, $sides-z) translateY($height / 2) rotateX(270deg);
+  }
+
+  .face-back{
+    @include face-asm(0.4, $texture-back, $texture-size, top center, $depth, $width);
+    transform: translate3d(-50%, -50%, $sides-z) translateY(- $height / 2) rotateX(270deg) rotateY(180deg);
+  }
+
+  .face-left {
+    @include face-asm(0.6, $texture-left, $texture-size, top center, $depth, $height);
+    transform: translate3d(-50%, -50%, $sides-z) translateX($width / 2) rotateX(270deg) rotateY(90deg);
+  }
+
+  .face-right{
+    @include face-asm(0.8, $texture-right, $texture-size, top center, $depth, $height);
+    transform: translate3d(-50%, -50%, $sides-z) translateX( - $width / 2) rotateX(270deg) rotateY(270deg);
+  }
+
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Dungeon</title>
+    <link href="css/cssdungeon.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+
+    <div class="scene group">
+      <div class="room tomb">
+        <div class="box floor"></div>
+        <div class="box wall top"></div>
+        <div class="box wall bottom"></div>
+        <div class="box wall left"></div>
+        <div class="box wall right"></div>
+        <div class="box pillar top-left"></div>
+        <div class="box pillar top-right"></div>
+        <div class="box pillar bottom-left"></div>
+        <div class="box pillar bottom-right"></div>
+      </div>
+      <div class="room dungeon">
+        <div class="box floor"></div>
+        <div class="box wall top"></div>
+        <div class="box wall bottom"></div>
+        <div class="box wall left"></div>
+        <div class="box wall right"></div>
+        <div class="box pillar top-left"></div>
+        <div class="box pillar top-right"></div>
+        <div class="box pillar bottom-left"></div>
+        <div class="box pillar bottom-right"></div>
+      </div>
+      <div class="room kitchen">
+        <div class="box floor"></div>
+        <div class="box wall top"></div>
+        <div class="box wall bottom"></div>
+        <div class="box wall left"></div>
+        <div class="box wall right"></div>
+        <div class="box pillar top-left"></div>
+        <div class="box pillar top-right"></div>
+        <div class="box pillar bottom-left"></div>
+        <div class="box pillar bottom-right"></div>
+      </div>
+    </div>
+
+    <script>
+
+      var domReady = function(callback) {
+        document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
+      };
+
+      (function(){
+        var boxes = document.getElementsByClassName('box');
+        for(box in boxes){
+          var faces = ['top', 'bottom', 'front', 'back', 'left', 'right'];
+          for(face in faces){
+            var faceMarkup = '<div class="face face-' + faces[face] + '"></div>';
+            boxes[box].insertAdjacentHTML('beforeend', faceMarkup);
+          }
+        }
+      })();
+
+    </script>
+
+  </body>
+</html>
