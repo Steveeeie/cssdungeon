@@ -1,11 +1,7 @@
 .scene{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform-origin: 50%;
-  transform-style: preserve-3d;
+  @include pivot;
   transform: rotateX(45deg) rotateZ(45deg);
-  animation: spin 300s infinite linear;
+  animation: spin 30s infinite linear;
 }
 
 @keyframes spin{
