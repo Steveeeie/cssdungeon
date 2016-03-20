@@ -1,0 +1,23 @@
+.bridge-1{
+  @include box(
+    $pivot-position: 'top',
+    $depth: 72px,
+    $height: 152px,
+    $width: 128px,
+    $texture: "bridge-side.png",
+    $texture-top: "bridge-top.jpg"
+  );
+  transform: translate3d(-100px, 175px, 0);
+}
+
+.bridge-2{
+  @include box(
+    $pivot-position: 'top',
+    $depth: 72px,
+    $height: 128px,
+    $width: 152px,
+    $texture: "bridge-side.png",
+    $texture-top: "bridge-top.jpg"
+  );
+  transform: translate3d(175px, -100px, 0);
+}
