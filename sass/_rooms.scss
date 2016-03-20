@@ -1,22 +1,17 @@
 .room{
-
-  @include room-asm(
-    $room-size: 300px
-  );
+  @include room-asm( $room-size: 300px );
 
   &.tomb{
-    @include room-asm(
-      $room-size: 500px
-    );
-    transform: translate3D(-200px, -200px, 0);
+    @include room-asm( $room-size: 400px );
+    transform: translate3D(-100px, -100px, 0);
   }
 
   &.dungeon{
-    transform: translate3D(300px, -200px, 0);
+    transform: translate3D(400px, -100px, 0);
   }
 
   &.kitchen{
-    transform: translate3D(-200px, 300px, 0);
+    transform: translate3D(-100px, 400px, 0);
   }
 
 }
