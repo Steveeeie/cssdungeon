@@ -1,10 +1,17 @@
-@mixin face-asm($shade, $texture, $texture-size, $texture-pos, $height, $width){
+@mixin face(
+  $shade: 0,
+  $texture: 'face-placeholder',
+  $texture-size: 128px,
+  $texture-position: 'center',
+  $height: 128px,
+  $width: 128px
+){
   background-image: linear-gradient(to bottom,
     rgba(0, 0, 0, $shade),
     rgba(0, 0, 0, $shade)),
     url('../textures/' + $texture);
+  background-position: $texture-position;
   background-size: $texture-size;
-  background-position: $texture-pos;
   height: $height;
   position: absolute;
   width: $width;

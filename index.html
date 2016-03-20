@@ -7,40 +7,80 @@
 
   <body>
 
-    <div class="scene group">
+    <div class="scene">
+
       <div class="room tomb">
-        <div class="box floor"></div>
-        <div class="box wall top"></div>
-        <div class="box wall bottom"></div>
-        <div class="box wall left"></div>
-        <div class="box wall right"></div>
-        <div class="box pillar top-left"></div>
-        <div class="box pillar top-right"></div>
-        <div class="box pillar bottom-left"></div>
-        <div class="box pillar bottom-right"></div>
+        <div class="floor"></div>
+        <div class="side side-front">
+          <div class="wall"></div>
+        </div>
+        <div class="side side-back side-door">
+          <div class="wall wall-left"></div>
+          <div class="wall wall-right"></div>
+          <div class="pillar pillar-left"></div>
+          <div class="pillar pillar-right"></div>
+        </div>
+        <div class="side side-left">
+          <div class="wall"></div>
+        </div>
+        <div class="side side-right side-door">
+          <div class="wall wall-left"></div>
+          <div class="wall wall-right"></div>
+          <div class="pillar pillar-left"></div>
+          <div class="pillar pillar-right"></div>
+        </div>
+        <div class="pillar pillar-top-left"></div>
+        <div class="pillar pillar-top-right"></div>
+        <div class="pillar pillar-bottom-left"></div>
+        <div class="pillar pillar-bottom-right"></div>
       </div>
+
       <div class="room dungeon">
-        <div class="box floor"></div>
-        <div class="box wall top"></div>
-        <div class="box wall bottom"></div>
-        <div class="box wall left"></div>
-        <div class="box wall right"></div>
-        <div class="box pillar top-left"></div>
-        <div class="box pillar top-right"></div>
-        <div class="box pillar bottom-left"></div>
-        <div class="box pillar bottom-right"></div>
+        <div class="floor"></div>
+        <div class="side side-front">
+          <div class="wall"></div>
+        </div>
+        <div class="side side-back">
+          <div class="wall"></div>
+        </div>
+        <div class="side side-left side-door">
+          <div class="wall wall-left"></div>
+          <div class="wall wall-right"></div>
+          <div class="pillar pillar-left"></div>
+          <div class="pillar pillar-right"></div>
+        </div>
+        <div class="side side-right">
+          <div class="wall"></div>
+        </div>
+        <div class="pillar pillar-top-left"></div>
+        <div class="pillar pillar-top-right"></div>
+        <div class="pillar pillar-bottom-left"></div>
+        <div class="pillar pillar-bottom-right"></div>
       </div>
+
       <div class="room kitchen">
-        <div class="box floor"></div>
-        <div class="box wall top"></div>
-        <div class="box wall bottom"></div>
-        <div class="box wall left"></div>
-        <div class="box wall right"></div>
-        <div class="box pillar top-left"></div>
-        <div class="box pillar top-right"></div>
-        <div class="box pillar bottom-left"></div>
-        <div class="box pillar bottom-right"></div>
+        <div class="floor"></div>
+        <div class="side side-front side-door">
+          <div class="wall wall-left"></div>
+          <div class="wall wall-right"></div>
+          <div class="pillar pillar-left"></div>
+          <div class="pillar pillar-right"></div>
+        </div>
+        <div class="side side-back">
+          <div class="wall"></div>
+        </div>
+        <div class="side side-left">
+          <div class="wall"></div>
+        </div>
+        <div class="side side-right">
+          <div class="wall"></div>
+        </div>
+        <div class="pillar pillar-top-left"></div>
+        <div class="pillar pillar-top-right"></div>
+        <div class="pillar pillar-bottom-left"></div>
+        <div class="pillar pillar-bottom-right"></div>
       </div>
+
     </div>
 
     <script>
@@ -50,7 +90,7 @@
       };
 
       (function(){
-        var boxes = document.getElementsByClassName('box');
+        var boxes = document.querySelectorAll(".pillar, .wall, .wall-small, .floor");
         for(box in boxes){
           var faces = ['top', 'bottom', 'front', 'back', 'left', 'right'];
           for(face in faces){
