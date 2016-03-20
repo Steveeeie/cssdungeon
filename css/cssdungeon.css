@@ -786,3 +786,117 @@ body {
     transform: translate3D(400px, -100px, 0); }
   .room.kitchen {
     transform: translate3D(-100px, 400px, 0); }
+
+.bridge-1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-100px, 175px, 0); }
+  .bridge-1 .face-top {
+    background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/bridge-top.jpg");
+    background-position: center;
+    background-size: 128px;
+    height: 152px;
+    position: absolute;
+    width: 128px;
+    transform: translate3d(-50%, -50%, 0); }
+  .bridge-1 .face-bottom {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+    background-position: center;
+    background-size: 128px;
+    height: 152px;
+    position: absolute;
+    width: 128px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    transform: translate3d(-50%, -50%, -72px); }
+  .bridge-1 .face-front {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/bridge-side.png");
+    background-position: top center;
+    background-size: 128px;
+    height: 72px;
+    position: absolute;
+    width: 128px;
+    transform: translate3d(-50%, -50%, -36px) translateY(76px) rotateX(270deg); }
+  .bridge-1 .face-back {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/bridge-side.png");
+    background-position: top center;
+    background-size: 128px;
+    height: 72px;
+    position: absolute;
+    width: 128px;
+    transform: translate3d(-50%, -50%, -36px) translateY(-76px) rotateX(270deg) rotateY(180deg); }
+  .bridge-1 .face-left {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/bridge-side.png");
+    background-position: top center;
+    background-size: 128px;
+    height: 72px;
+    position: absolute;
+    width: 152px;
+    transform: translate3d(-50%, -50%, -36px) translateX(64px) rotateX(270deg) rotateY(90deg); }
+  .bridge-1 .face-right {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/bridge-side.png");
+    background-position: top center;
+    background-size: 128px;
+    height: 72px;
+    position: absolute;
+    width: 152px;
+    transform: translate3d(-50%, -50%, -36px) translateX(-64px) rotateX(270deg) rotateY(270deg); }
+
+.bridge-2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 50%;
+  transform-style: preserve-3d;
+  transform: translate3d(175px, -100px, 0); }
+  .bridge-2 .face-top {
+    background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/bridge-top.jpg");
+    background-position: center;
+    background-size: 128px;
+    height: 128px;
+    position: absolute;
+    width: 152px;
+    transform: translate3d(-50%, -50%, 0); }
+  .bridge-2 .face-bottom {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+    background-position: center;
+    background-size: 128px;
+    height: 128px;
+    position: absolute;
+    width: 152px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    transform: translate3d(-50%, -50%, -72px); }
+  .bridge-2 .face-front {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/bridge-side.png");
+    background-position: top center;
+    background-size: 128px;
+    height: 72px;
+    position: absolute;
+    width: 152px;
+    transform: translate3d(-50%, -50%, -36px) translateY(64px) rotateX(270deg); }
+  .bridge-2 .face-back {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/bridge-side.png");
+    background-position: top center;
+    background-size: 128px;
+    height: 72px;
+    position: absolute;
+    width: 152px;
+    transform: translate3d(-50%, -50%, -36px) translateY(-64px) rotateX(270deg) rotateY(180deg); }
+  .bridge-2 .face-left {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/bridge-side.png");
+    background-position: top center;
+    background-size: 128px;
+    height: 72px;
+    position: absolute;
+    width: 128px;
+    transform: translate3d(-50%, -50%, -36px) translateX(76px) rotateX(270deg) rotateY(90deg); }
+  .bridge-2 .face-right {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/bridge-side.png");
+    background-position: top center;
+    background-size: 128px;
+    height: 72px;
+    position: absolute;
+    width: 128px;
+    transform: translate3d(-50%, -50%, -36px) translateX(-76px) rotateX(270deg) rotateY(270deg); }

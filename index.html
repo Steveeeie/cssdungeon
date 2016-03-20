@@ -35,6 +35,8 @@
         <div class="pillar pillar-bottom-right"></div>
       </div>
 
+      <div class="bridge bridge-1"></div>
+
       <div class="room dungeon">
         <div class="floor"></div>
         <div class="side side-front">
@@ -57,6 +59,8 @@
         <div class="pillar pillar-bottom-left"></div>
         <div class="pillar pillar-bottom-right"></div>
       </div>
+
+      <div class="bridge bridge-2"></div>
 
       <div class="room kitchen">
         <div class="floor"></div>
@@ -90,7 +94,7 @@
       };
 
       (function(){
-        var boxes = document.querySelectorAll(".pillar, .wall, .wall-small, .floor");
+        var boxes = document.querySelectorAll(".pillar, .wall, .wall-small, .floor, .bridge");
         for(box in boxes){
           var faces = ['top', 'bottom', 'front', 'back', 'left', 'right'];
           for(face in faces){
