@@ -10,12 +10,17 @@
   "keywords": [
     "CSS3",
     "Transforms",
-    "3D",
+    "3D"
   ],
   "author": "Steve Meredith",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Steveeeie/cssdungeon/issues"
   },
-  "homepage": "https://github.com/Steveeeie/cssdungeon#readme"
+  "homepage": "https://github.com/Steveeeie/cssdungeon#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  }
 }

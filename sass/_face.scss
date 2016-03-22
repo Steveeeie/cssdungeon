@@ -12,6 +12,7 @@
     url('../textures/' + $texture);
   background-position: $texture-position;
   background-size: $texture-size;
+  backface-visibility: hidden;
   height: $height;
   position: absolute;
   width: $width;
