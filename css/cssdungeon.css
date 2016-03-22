@@ -6,6 +6,10 @@ body {
   height: 100%;
   overflow: hidden; }
 
+* {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
 .scene {
   position: absolute;
   left: 50%;
@@ -32,11 +36,13 @@ body {
     left: 50%;
     top: 50%;
     transform-origin: 50%;
-    transform-style: preserve-3d; }
+    transform-style: preserve-3d;
+    transform: translateZ(-1px); }
     .room .floor .face-top {
       background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/floor-top.jpg");
       background-position: center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 300px;
       position: absolute;
       width: 300px;
@@ -45,6 +51,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
       background-position: center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 300px;
       position: absolute;
       width: 300px;
@@ -54,6 +61,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/floor-side.jpg");
       background-position: top center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 72px;
       position: absolute;
       width: 300px;
@@ -62,6 +70,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/floor-side.jpg");
       background-position: top center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 72px;
       position: absolute;
       width: 300px;
@@ -70,6 +79,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/floor-side.jpg");
       background-position: top center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 72px;
       position: absolute;
       width: 300px;
@@ -78,6 +88,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/floor-side.jpg");
       background-position: top center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 72px;
       position: absolute;
       width: 300px;
@@ -98,6 +109,7 @@ body {
         background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 36px;
         position: absolute;
         width: 204px;
@@ -106,6 +118,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 36px;
         position: absolute;
         width: 204px;
@@ -115,6 +128,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 204px;
@@ -123,6 +137,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 204px;
@@ -131,6 +146,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 36px;
@@ -139,6 +155,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 36px;
@@ -153,6 +170,7 @@ body {
         background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 36px;
         position: absolute;
         width: 22px;
@@ -161,6 +179,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 36px;
         position: absolute;
         width: 22px;
@@ -170,6 +189,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 22px;
@@ -178,6 +198,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 22px;
@@ -186,6 +207,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 36px;
@@ -194,6 +216,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 36px;
@@ -222,6 +245,7 @@ body {
         background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 204px;
         position: absolute;
         width: 36px;
@@ -230,6 +254,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 204px;
         position: absolute;
         width: 36px;
@@ -239,6 +264,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 36px;
@@ -247,6 +273,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 36px;
@@ -255,6 +282,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 204px;
@@ -263,6 +291,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 204px;
@@ -277,6 +306,7 @@ body {
         background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 22px;
         position: absolute;
         width: 36px;
@@ -285,6 +315,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 22px;
         position: absolute;
         width: 36px;
@@ -294,6 +325,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 36px;
@@ -302,6 +334,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 36px;
@@ -310,6 +343,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 22px;
@@ -318,6 +352,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 22px;
@@ -348,6 +383,7 @@ body {
       background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/pillar-top.jpg");
       background-position: center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 48px;
       position: absolute;
       width: 48px;
@@ -356,6 +392,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
       background-position: center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 48px;
       position: absolute;
       width: 48px;
@@ -365,6 +402,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/pillar-side.jpg");
       background-position: top center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 128px;
       position: absolute;
       width: 48px;
@@ -373,6 +411,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/pillar-side.jpg");
       background-position: top center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 128px;
       position: absolute;
       width: 48px;
@@ -381,6 +420,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/pillar-side.jpg");
       background-position: top center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 128px;
       position: absolute;
       width: 48px;
@@ -389,6 +429,7 @@ body {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/pillar-side.jpg");
       background-position: top center;
       background-size: 128px;
+      backface-visibility: hidden;
       height: 128px;
       position: absolute;
       width: 48px;
@@ -413,11 +454,13 @@ body {
       left: 50%;
       top: 50%;
       transform-origin: 50%;
-      transform-style: preserve-3d; }
+      transform-style: preserve-3d;
+      transform: translateZ(-1px); }
       .room.tomb .floor .face-top {
         background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/floor-top.jpg");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 400px;
         position: absolute;
         width: 400px;
@@ -426,6 +469,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 400px;
         position: absolute;
         width: 400px;
@@ -435,6 +479,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/floor-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 72px;
         position: absolute;
         width: 400px;
@@ -443,6 +488,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/floor-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 72px;
         position: absolute;
         width: 400px;
@@ -451,6 +497,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/floor-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 72px;
         position: absolute;
         width: 400px;
@@ -459,6 +506,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/floor-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 72px;
         position: absolute;
         width: 400px;
@@ -479,6 +527,7 @@ body {
           background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
           background-position: center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 36px;
           position: absolute;
           width: 304px;
@@ -487,6 +536,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
           background-position: center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 36px;
           position: absolute;
           width: 304px;
@@ -496,6 +546,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 304px;
@@ -504,6 +555,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 304px;
@@ -512,6 +564,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 36px;
@@ -520,6 +573,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 36px;
@@ -534,6 +588,7 @@ body {
           background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
           background-position: center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 36px;
           position: absolute;
           width: 72px;
@@ -542,6 +597,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
           background-position: center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 36px;
           position: absolute;
           width: 72px;
@@ -551,6 +607,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 72px;
@@ -559,6 +616,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 72px;
@@ -567,6 +625,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 36px;
@@ -575,6 +634,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 36px;
@@ -603,6 +663,7 @@ body {
           background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
           background-position: center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 304px;
           position: absolute;
           width: 36px;
@@ -611,6 +672,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
           background-position: center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 304px;
           position: absolute;
           width: 36px;
@@ -620,6 +682,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 36px;
@@ -628,6 +691,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 36px;
@@ -636,6 +700,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 304px;
@@ -644,6 +709,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 304px;
@@ -658,6 +724,7 @@ body {
           background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
           background-position: center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 72px;
           position: absolute;
           width: 36px;
@@ -666,6 +733,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
           background-position: center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 72px;
           position: absolute;
           width: 36px;
@@ -675,6 +743,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 36px;
@@ -683,6 +752,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 36px;
@@ -691,6 +761,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 72px;
@@ -699,6 +770,7 @@ body {
           background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
+          backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 72px;
@@ -729,6 +801,7 @@ body {
         background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/pillar-top.jpg");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 48px;
         position: absolute;
         width: 48px;
@@ -737,6 +810,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
         background-position: center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 48px;
         position: absolute;
         width: 48px;
@@ -746,6 +820,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/pillar-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 128px;
         position: absolute;
         width: 48px;
@@ -754,6 +829,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/pillar-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 128px;
         position: absolute;
         width: 48px;
@@ -762,6 +838,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/pillar-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 128px;
         position: absolute;
         width: 48px;
@@ -770,6 +847,7 @@ body {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/pillar-side.jpg");
         background-position: top center;
         background-size: 128px;
+        backface-visibility: hidden;
         height: 128px;
         position: absolute;
         width: 48px;
@@ -798,6 +876,7 @@ body {
     background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/bridge-top.jpg");
     background-position: center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 152px;
     position: absolute;
     width: 128px;
@@ -806,6 +885,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
     background-position: center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 152px;
     position: absolute;
     width: 128px;
@@ -815,6 +895,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 72px;
     position: absolute;
     width: 128px;
@@ -823,6 +904,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 72px;
     position: absolute;
     width: 128px;
@@ -831,6 +913,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 72px;
     position: absolute;
     width: 152px;
@@ -839,6 +922,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 72px;
     position: absolute;
     width: 152px;
@@ -855,6 +939,7 @@ body {
     background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/bridge-top.jpg");
     background-position: center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 128px;
     position: absolute;
     width: 152px;
@@ -863,6 +948,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
     background-position: center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 128px;
     position: absolute;
     width: 152px;
@@ -872,6 +958,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 72px;
     position: absolute;
     width: 152px;
@@ -880,6 +967,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 72px;
     position: absolute;
     width: 152px;
@@ -888,6 +976,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 72px;
     position: absolute;
     width: 128px;
@@ -896,6 +985,7 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
+    backface-visibility: hidden;
     height: 72px;
     position: absolute;
     width: 128px;
