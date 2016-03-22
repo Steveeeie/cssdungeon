@@ -29,6 +29,7 @@
       $texture: $texture-floor-top,
       $texture-top: $texture-floor-sides
     );
+    transform: translateZ(-1px);
   }
 
   .side-front, .side-back{
