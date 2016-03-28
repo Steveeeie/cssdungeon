@@ -7,13 +7,12 @@
   $texture-pillar-top: "pillar-top.jpg",
   $texture-pillar-sides: "pillar-side.jpg"
 ){
-
   $floor-depth: 72px;
   $door-size: 64px;
   $pillar-depth: 128px;
   $pillar-thickness: 48px;
   $wall-depth: 116px;
-  $wall-height: 36px;
+  $wall-height: 18px;
   $wall-width: $room-size - ($pillar-thickness * 2);
   $wall-width-door: ($room-size / 2) - ($door-size / 2) - ($pillar-thickness * 2);
   $snap-edge: ($room-size / 2) - ($pillar-thickness / 2);
@@ -27,9 +26,10 @@
       $height: $room-size,
       $width: $room-size,
       $texture: $texture-floor-top,
-      $texture-top: $texture-floor-sides
+      $texture-top: $texture-floor-sides,
+      $texture-size: 400px
     );
-    transform: translateZ(-1px);
+
   }
 
   .side-front, .side-back{
@@ -66,6 +66,14 @@
       }
       .pillar-right{
         transform: translateX((($door-size / 2) + ($pillar-thickness / 2)));
+      }
+      .door{
+        @include box(
+          $pivot-position: "bottom",
+          $height: 16px,
+          $depth: 96px,
+          $width: 64px
+        );
       }
     }
   }
@@ -105,6 +113,14 @@
       .pillar-right{
         transform: translateY( (($door-size / 2) + ($pillar-thickness / 2)));
       }
+      .door{
+        @include box(
+          $pivot-position: "bottom",
+          $height: 64px,
+          $depth: 96px,
+          $width: 16px
+        );
+      }
     }
   }
 
@@ -131,7 +147,8 @@
       $height: $pillar-thickness,
       $width: $pillar-thickness,
       $texture: $texture-pillar-sides,
-      $texture-top: $texture-pillar-top
+      $texture-top: $texture-pillar-top,
+      $texture-size: cover
     );
   }
 
