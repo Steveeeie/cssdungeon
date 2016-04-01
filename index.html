@@ -19,6 +19,7 @@
           <div class="wall wall-right"></div>
           <div class="pillar pillar-left"></div>
           <div class="pillar pillar-right"></div>
+          <div class="door"></div>
         </div>
         <div class="side side-left">
           <div class="wall"></div>
@@ -28,6 +29,7 @@
           <div class="wall wall-right"></div>
           <div class="pillar pillar-left"></div>
           <div class="pillar pillar-right"></div>
+          <div class="door"></div>
         </div>
         <div class="pillar pillar-top-left"></div>
         <div class="pillar pillar-top-right"></div>
@@ -50,6 +52,7 @@
           <div class="wall wall-right"></div>
           <div class="pillar pillar-left"></div>
           <div class="pillar pillar-right"></div>
+          <div class="door"></div>
         </div>
         <div class="side side-right">
           <div class="wall"></div>
@@ -69,6 +72,7 @@
           <div class="wall wall-right"></div>
           <div class="pillar pillar-left"></div>
           <div class="pillar pillar-right"></div>
+          <div class="door"></div>
         </div>
         <div class="side side-back">
           <div class="wall"></div>
@@ -94,7 +98,7 @@
       };
 
       (function(){
-        var boxes = document.querySelectorAll(".pillar, .wall, .wall-small, .floor, .bridge");
+        var boxes = document.querySelectorAll(".pillar, .wall, .wall-small, .floor, .bridge, .door");
         for(box in boxes){
           var faces = ['top', 'bottom', 'front', 'back', 'left', 'right'];
           for(face in faces){
