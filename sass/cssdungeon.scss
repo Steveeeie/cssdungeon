@@ -1,11 +1,18 @@
 //  ▲
 // ▲ ▲
 
-@import 'body';
+//Variables
+@import 'variables';
+
+//Mixins
 @import 'pivot';
-@import 'scene';
 @import 'face';
 @import 'box';
-@import 'room';
+
+//Scene
+@import 'scene';
 @import 'rooms';
-@import 'bridges';
+@import 'floors';
+@import 'walls';
+@import 'door';
+@import 'pillars';

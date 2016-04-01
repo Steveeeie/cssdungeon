@@ -1,0 +1,10 @@
+.wall{
+  @include box(
+    $pivot-position: 'bottom',
+    $depth: $wall-depth,
+    $height: $wall-height,
+    $width: $wall-width,
+    $texture: $texture-wall-sides,
+    $texture-top: $texture-wall-top
+  );
+}

@@ -1,0 +1,35 @@
+.door{
+  @include box(
+    $pivot-position: "bottom",
+    $height: 16px,
+    $depth: 96px,
+    $width: 64px
+  );
+}
+
+.wall-door{
+  @include box(
+    $pivot-position: 'bottom',
+    $depth: $wall-depth,
+    $height: $wall-height,
+    $width: $wall-width-door,
+    $texture: $texture-wall-sides,
+    $texture-top: $texture-wall-top
+  );
+}
+
+.wall-door-left{
+  transform: translateX( - (($room-size / 2) - ($wall-width-door /2) - ($pillar-thickness)));
+}
+
+.wall-door-right{
+  transform: translateX((($room-size / 2) - ($wall-width-door /2) - ($pillar-thickness)));
+}
+
+.pillar-door-left{
+  transform: translateX( - (($door-size / 2) + ($pillar-thickness / 2)));
+}
+
+.pillar-door-right{
+  transform: translateX((($door-size / 2) + ($pillar-thickness / 2)));
+}

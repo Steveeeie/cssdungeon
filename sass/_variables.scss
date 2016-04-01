@@ -1,0 +1,16 @@
+$room-size: 400px;
+$texture-wall-top: "wall-top.jpg";
+$texture-wall-sides: "wall-side.jpg";
+$texture-floor-top: "floor-side.jpg";
+$texture-floor-sides: "floor-top.jpg";
+$texture-pillar-top: "pillar-top.jpg";
+$texture-pillar-sides: "pillar-side.jpg";
+$floor-depth: 72px;
+$door-size: 64px;
+$pillar-depth: 128px;
+$pillar-thickness: 48px;
+$wall-depth: 116px;
+$wall-height: 18px;
+$wall-width: $room-size - ($pillar-thickness * 2);
+$wall-width-door: ($room-size / 2) - ($door-size / 2) - ($pillar-thickness * 2);
+$snap-edge: ($room-size / 2) - ($pillar-thickness / 2);
