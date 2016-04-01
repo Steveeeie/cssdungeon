@@ -6,10 +6,6 @@ body {
   height: 100%;
   overflow: hidden; }
 
-* {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }
-
 .scene {
   position: absolute;
   left: 50%;
@@ -36,21 +32,20 @@ body {
     left: 50%;
     top: 50%;
     transform-origin: 50%;
-    transform-style: preserve-3d;
-    transform: translateZ(-1px); }
+    transform-style: preserve-3d; }
     .room .floor .face-top {
-      background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/floor-top.jpg");
+      background-image: url("../textures/floor-top.jpg");
       background-position: center;
-      background-size: 128px;
+      background-size: 400px;
       backface-visibility: hidden;
       height: 300px;
       position: absolute;
       width: 300px;
       transform: translate3d(-50%, -50%, 0); }
     .room .floor .face-bottom {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+      background-image: url("../textures/none");
       background-position: center;
-      background-size: 128px;
+      background-size: 400px;
       backface-visibility: hidden;
       height: 300px;
       position: absolute;
@@ -58,321 +53,246 @@ body {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
       transform: translate3d(-50%, -50%, -72px); }
     .room .floor .face-front {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/floor-side.jpg");
+      background-image: url("../textures/floor-side.jpg");
       background-position: top center;
-      background-size: 128px;
+      background-size: 400px;
       backface-visibility: hidden;
       height: 72px;
       position: absolute;
       width: 300px;
       transform: translate3d(-50%, -50%, -36px) translateY(150px) rotateX(270deg); }
     .room .floor .face-back {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/floor-side.jpg");
+      background-image: url("../textures/floor-side.jpg");
       background-position: top center;
-      background-size: 128px;
+      background-size: 400px;
       backface-visibility: hidden;
       height: 72px;
       position: absolute;
       width: 300px;
       transform: translate3d(-50%, -50%, -36px) translateY(-150px) rotateX(270deg) rotateY(180deg); }
     .room .floor .face-left {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/floor-side.jpg");
+      background-image: url("../textures/floor-side.jpg");
       background-position: top center;
-      background-size: 128px;
+      background-size: 400px;
       backface-visibility: hidden;
       height: 72px;
       position: absolute;
       width: 300px;
       transform: translate3d(-50%, -50%, -36px) translateX(150px) rotateX(270deg) rotateY(90deg); }
     .room .floor .face-right {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/floor-side.jpg");
+      background-image: url("../textures/floor-side.jpg");
       background-position: top center;
-      background-size: 128px;
+      background-size: 400px;
       backface-visibility: hidden;
       height: 72px;
       position: absolute;
       width: 300px;
       transform: translate3d(-50%, -50%, -36px) translateX(-150px) rotateX(270deg) rotateY(270deg); }
-  .room .side-front, .room .side-back {
+  .room .side {
     position: absolute;
     left: 50%;
     top: 50%;
     transform-origin: 50%;
     transform-style: preserve-3d; }
-    .room .side-front:not(.side-door) .wall, .room .side-back:not(.side-door) .wall {
+    .room .side:not(.side-door) .wall {
       position: absolute;
       left: 50%;
       top: 50%;
       transform-origin: 50%;
       transform-style: preserve-3d; }
-      .room .side-front:not(.side-door) .wall .face-top, .room .side-back:not(.side-door) .wall .face-top {
-        background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
+      .room .side:not(.side-door) .wall .face-top {
+        background-image: url("../textures/wall-top.jpg");
         background-position: center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 36px;
+        height: 18px;
         position: absolute;
         width: 204px;
         transform: translate3d(-50%, -50%, 116px); }
-      .room .side-front:not(.side-door) .wall .face-bottom, .room .side-back:not(.side-door) .wall .face-bottom {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+      .room .side:not(.side-door) .wall .face-bottom {
+        background-image: url("../textures/none");
         background-position: center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 36px;
+        height: 18px;
         position: absolute;
         width: 204px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         transform: translate3d(-50%, -50%, 0); }
-      .room .side-front:not(.side-door) .wall .face-front, .room .side-back:not(.side-door) .wall .face-front {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
+      .room .side:not(.side-door) .wall .face-front {
+        background-image: url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 204px;
-        transform: translate3d(-50%, -50%, 58px) translateY(18px) rotateX(270deg); }
-      .room .side-front:not(.side-door) .wall .face-back, .room .side-back:not(.side-door) .wall .face-back {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
+        transform: translate3d(-50%, -50%, 58px) translateY(9px) rotateX(270deg); }
+      .room .side:not(.side-door) .wall .face-back {
+        background-image: url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 204px;
-        transform: translate3d(-50%, -50%, 58px) translateY(-18px) rotateX(270deg) rotateY(180deg); }
-      .room .side-front:not(.side-door) .wall .face-left, .room .side-back:not(.side-door) .wall .face-left {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
+        transform: translate3d(-50%, -50%, 58px) translateY(-9px) rotateX(270deg) rotateY(180deg); }
+      .room .side:not(.side-door) .wall .face-left {
+        background-image: url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
         height: 116px;
         position: absolute;
-        width: 36px;
+        width: 18px;
         transform: translate3d(-50%, -50%, 58px) translateX(102px) rotateX(270deg) rotateY(90deg); }
-      .room .side-front:not(.side-door) .wall .face-right, .room .side-back:not(.side-door) .wall .face-right {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
+      .room .side:not(.side-door) .wall .face-right {
+        background-image: url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
         height: 116px;
         position: absolute;
-        width: 36px;
+        width: 18px;
         transform: translate3d(-50%, -50%, 58px) translateX(-102px) rotateX(270deg) rotateY(270deg); }
-    .room .side-front.side-door .wall, .room .side-back.side-door .wall {
+    .room .side.side-door .wall {
       position: absolute;
       left: 50%;
       top: 50%;
       transform-origin: 50%;
       transform-style: preserve-3d; }
-      .room .side-front.side-door .wall .face-top, .room .side-back.side-door .wall .face-top {
-        background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
+      .room .side.side-door .wall .face-top {
+        background-image: url("../textures/wall-top.jpg");
         background-position: center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 36px;
+        height: 18px;
         position: absolute;
         width: 22px;
         transform: translate3d(-50%, -50%, 116px); }
-      .room .side-front.side-door .wall .face-bottom, .room .side-back.side-door .wall .face-bottom {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+      .room .side.side-door .wall .face-bottom {
+        background-image: url("../textures/none");
         background-position: center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 36px;
+        height: 18px;
         position: absolute;
         width: 22px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         transform: translate3d(-50%, -50%, 0); }
-      .room .side-front.side-door .wall .face-front, .room .side-back.side-door .wall .face-front {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
+      .room .side.side-door .wall .face-front {
+        background-image: url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 22px;
-        transform: translate3d(-50%, -50%, 58px) translateY(18px) rotateX(270deg); }
-      .room .side-front.side-door .wall .face-back, .room .side-back.side-door .wall .face-back {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
+        transform: translate3d(-50%, -50%, 58px) translateY(9px) rotateX(270deg); }
+      .room .side.side-door .wall .face-back {
+        background-image: url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
         height: 116px;
         position: absolute;
         width: 22px;
-        transform: translate3d(-50%, -50%, 58px) translateY(-18px) rotateX(270deg) rotateY(180deg); }
-      .room .side-front.side-door .wall .face-left, .room .side-back.side-door .wall .face-left {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
+        transform: translate3d(-50%, -50%, 58px) translateY(-9px) rotateX(270deg) rotateY(180deg); }
+      .room .side.side-door .wall .face-left {
+        background-image: url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
         height: 116px;
         position: absolute;
-        width: 36px;
+        width: 18px;
         transform: translate3d(-50%, -50%, 58px) translateX(11px) rotateX(270deg) rotateY(90deg); }
-      .room .side-front.side-door .wall .face-right, .room .side-back.side-door .wall .face-right {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
+      .room .side.side-door .wall .face-right {
+        background-image: url("../textures/wall-side.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
         height: 116px;
         position: absolute;
-        width: 36px;
+        width: 18px;
         transform: translate3d(-50%, -50%, 58px) translateX(-11px) rotateX(270deg) rotateY(270deg); }
-    .room .side-front.side-door .wall-left, .room .side-back.side-door .wall-left {
+    .room .side.side-door .wall-left {
       transform: translateX(-91px); }
-    .room .side-front.side-door .wall-right, .room .side-back.side-door .wall-right {
+    .room .side.side-door .wall-right {
       transform: translateX(91px); }
-    .room .side-front.side-door .pillar-left, .room .side-back.side-door .pillar-left {
+    .room .side.side-door .pillar-left {
       transform: translateX(-56px); }
-    .room .side-front.side-door .pillar-right, .room .side-back.side-door .pillar-right {
+    .room .side.side-door .pillar-right {
       transform: translateX(56px); }
-  .room .side-left, .room .side-right {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform-origin: 50%;
-    transform-style: preserve-3d; }
-    .room .side-left:not(.side-door) .wall, .room .side-right:not(.side-door) .wall {
+    .room .side.side-door .door {
       position: absolute;
       left: 50%;
       top: 50%;
       transform-origin: 50%;
       transform-style: preserve-3d; }
-      .room .side-left:not(.side-door) .wall .face-top, .room .side-right:not(.side-door) .wall .face-top {
-        background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
+      .room .side.side-door .door .face-top {
+        background-image: url("../textures/box-placeholder.jpg");
         background-position: center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 204px;
+        height: 16px;
         position: absolute;
-        width: 36px;
-        transform: translate3d(-50%, -50%, 116px); }
-      .room .side-left:not(.side-door) .wall .face-bottom, .room .side-right:not(.side-door) .wall .face-bottom {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+        width: 64px;
+        transform: translate3d(-50%, -50%, 96px); }
+      .room .side.side-door .door .face-bottom {
+        background-image: url("../textures/none");
         background-position: center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 204px;
+        height: 16px;
         position: absolute;
-        width: 36px;
+        width: 64px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         transform: translate3d(-50%, -50%, 0); }
-      .room .side-left:not(.side-door) .wall .face-front, .room .side-right:not(.side-door) .wall .face-front {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
+      .room .side.side-door .door .face-front {
+        background-image: url("../textures/box-placeholder.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 116px;
+        height: 96px;
         position: absolute;
-        width: 36px;
-        transform: translate3d(-50%, -50%, 58px) translateY(102px) rotateX(270deg); }
-      .room .side-left:not(.side-door) .wall .face-back, .room .side-right:not(.side-door) .wall .face-back {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
+        width: 64px;
+        transform: translate3d(-50%, -50%, 48px) translateY(8px) rotateX(270deg); }
+      .room .side.side-door .door .face-back {
+        background-image: url("../textures/box-placeholder.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 116px;
+        height: 96px;
         position: absolute;
-        width: 36px;
-        transform: translate3d(-50%, -50%, 58px) translateY(-102px) rotateX(270deg) rotateY(180deg); }
-      .room .side-left:not(.side-door) .wall .face-left, .room .side-right:not(.side-door) .wall .face-left {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
+        width: 64px;
+        transform: translate3d(-50%, -50%, 48px) translateY(-8px) rotateX(270deg) rotateY(180deg); }
+      .room .side.side-door .door .face-left {
+        background-image: url("../textures/box-placeholder.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 116px;
+        height: 96px;
         position: absolute;
-        width: 204px;
-        transform: translate3d(-50%, -50%, 58px) translateX(18px) rotateX(270deg) rotateY(90deg); }
-      .room .side-left:not(.side-door) .wall .face-right, .room .side-right:not(.side-door) .wall .face-right {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
+        width: 16px;
+        transform: translate3d(-50%, -50%, 48px) translateX(32px) rotateX(270deg) rotateY(90deg); }
+      .room .side.side-door .door .face-right {
+        background-image: url("../textures/box-placeholder.jpg");
         background-position: top center;
         background-size: 128px;
         backface-visibility: hidden;
-        height: 116px;
+        height: 96px;
         position: absolute;
-        width: 204px;
-        transform: translate3d(-50%, -50%, 58px) translateX(-18px) rotateX(270deg) rotateY(270deg); }
-    .room .side-left.side-door .wall, .room .side-right.side-door .wall {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform-origin: 50%;
-      transform-style: preserve-3d; }
-      .room .side-left.side-door .wall .face-top, .room .side-right.side-door .wall .face-top {
-        background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
-        background-position: center;
-        background-size: 128px;
-        backface-visibility: hidden;
-        height: 22px;
-        position: absolute;
-        width: 36px;
-        transform: translate3d(-50%, -50%, 116px); }
-      .room .side-left.side-door .wall .face-bottom, .room .side-right.side-door .wall .face-bottom {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
-        background-position: center;
-        background-size: 128px;
-        backface-visibility: hidden;
-        height: 22px;
-        position: absolute;
-        width: 36px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-        transform: translate3d(-50%, -50%, 0); }
-      .room .side-left.side-door .wall .face-front, .room .side-right.side-door .wall .face-front {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
-        background-position: top center;
-        background-size: 128px;
-        backface-visibility: hidden;
-        height: 116px;
-        position: absolute;
-        width: 36px;
-        transform: translate3d(-50%, -50%, 58px) translateY(11px) rotateX(270deg); }
-      .room .side-left.side-door .wall .face-back, .room .side-right.side-door .wall .face-back {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
-        background-position: top center;
-        background-size: 128px;
-        backface-visibility: hidden;
-        height: 116px;
-        position: absolute;
-        width: 36px;
-        transform: translate3d(-50%, -50%, 58px) translateY(-11px) rotateX(270deg) rotateY(180deg); }
-      .room .side-left.side-door .wall .face-left, .room .side-right.side-door .wall .face-left {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
-        background-position: top center;
-        background-size: 128px;
-        backface-visibility: hidden;
-        height: 116px;
-        position: absolute;
-        width: 22px;
-        transform: translate3d(-50%, -50%, 58px) translateX(18px) rotateX(270deg) rotateY(90deg); }
-      .room .side-left.side-door .wall .face-right, .room .side-right.side-door .wall .face-right {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
-        background-position: top center;
-        background-size: 128px;
-        backface-visibility: hidden;
-        height: 116px;
-        position: absolute;
-        width: 22px;
-        transform: translate3d(-50%, -50%, 58px) translateX(-18px) rotateX(270deg) rotateY(270deg); }
-    .room .side-left.side-door .wall-left, .room .side-right.side-door .wall-left {
-      transform: translateY(-91px); }
-    .room .side-left.side-door .wall-right, .room .side-right.side-door .wall-right {
-      transform: translateY(91px); }
-    .room .side-left.side-door .pillar-left, .room .side-right.side-door .pillar-left {
-      transform: translateY(-56px); }
-    .room .side-left.side-door .pillar-right, .room .side-right.side-door .pillar-right {
-      transform: translateY(56px); }
+        width: 16px;
+        transform: translate3d(-50%, -50%, 48px) translateX(-32px) rotateX(270deg) rotateY(270deg); }
   .room .side-front {
     transform: translateY(-126px); }
   .room .side-back {
     transform: translateY(126px); }
   .room .side-left {
-    transform: translateX(-126px); }
+    transform: translateX(-126px) rotateZ(90deg); }
   .room .side-right {
-    transform: translateX(126px); }
+    transform: translateX(126px) rotateZ(90deg); }
   .room .pillar {
     position: absolute;
     left: 50%;
@@ -380,18 +300,18 @@ body {
     transform-origin: 50%;
     transform-style: preserve-3d; }
     .room .pillar .face-top {
-      background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/pillar-top.jpg");
+      background-image: url("../textures/pillar-top.jpg");
       background-position: center;
-      background-size: 128px;
+      background-size: cover;
       backface-visibility: hidden;
       height: 48px;
       position: absolute;
       width: 48px;
       transform: translate3d(-50%, -50%, 128px); }
     .room .pillar .face-bottom {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+      background-image: url("../textures/none");
       background-position: center;
-      background-size: 128px;
+      background-size: cover;
       backface-visibility: hidden;
       height: 48px;
       position: absolute;
@@ -399,36 +319,36 @@ body {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
       transform: translate3d(-50%, -50%, 0); }
     .room .pillar .face-front {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/pillar-side.jpg");
+      background-image: url("../textures/pillar-side.jpg");
       background-position: top center;
-      background-size: 128px;
+      background-size: cover;
       backface-visibility: hidden;
       height: 128px;
       position: absolute;
       width: 48px;
       transform: translate3d(-50%, -50%, 64px) translateY(24px) rotateX(270deg); }
     .room .pillar .face-back {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/pillar-side.jpg");
+      background-image: url("../textures/pillar-side.jpg");
       background-position: top center;
-      background-size: 128px;
+      background-size: cover;
       backface-visibility: hidden;
       height: 128px;
       position: absolute;
       width: 48px;
       transform: translate3d(-50%, -50%, 64px) translateY(-24px) rotateX(270deg) rotateY(180deg); }
     .room .pillar .face-left {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/pillar-side.jpg");
+      background-image: url("../textures/pillar-side.jpg");
       background-position: top center;
-      background-size: 128px;
+      background-size: cover;
       backface-visibility: hidden;
       height: 128px;
       position: absolute;
       width: 48px;
       transform: translate3d(-50%, -50%, 64px) translateX(24px) rotateX(270deg) rotateY(90deg); }
     .room .pillar .face-right {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/pillar-side.jpg");
+      background-image: url("../textures/pillar-side.jpg");
       background-position: top center;
-      background-size: 128px;
+      background-size: cover;
       backface-visibility: hidden;
       height: 128px;
       position: absolute;
@@ -454,21 +374,20 @@ body {
       left: 50%;
       top: 50%;
       transform-origin: 50%;
-      transform-style: preserve-3d;
-      transform: translateZ(-1px); }
+      transform-style: preserve-3d; }
       .room.tomb .floor .face-top {
-        background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/floor-top.jpg");
+        background-image: url("../textures/floor-top.jpg");
         background-position: center;
-        background-size: 128px;
+        background-size: 400px;
         backface-visibility: hidden;
         height: 400px;
         position: absolute;
         width: 400px;
         transform: translate3d(-50%, -50%, 0); }
       .room.tomb .floor .face-bottom {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+        background-image: url("../textures/none");
         background-position: center;
-        background-size: 128px;
+        background-size: 400px;
         backface-visibility: hidden;
         height: 400px;
         position: absolute;
@@ -476,321 +395,246 @@ body {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         transform: translate3d(-50%, -50%, -72px); }
       .room.tomb .floor .face-front {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/floor-side.jpg");
+        background-image: url("../textures/floor-side.jpg");
         background-position: top center;
-        background-size: 128px;
+        background-size: 400px;
         backface-visibility: hidden;
         height: 72px;
         position: absolute;
         width: 400px;
         transform: translate3d(-50%, -50%, -36px) translateY(200px) rotateX(270deg); }
       .room.tomb .floor .face-back {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/floor-side.jpg");
+        background-image: url("../textures/floor-side.jpg");
         background-position: top center;
-        background-size: 128px;
+        background-size: 400px;
         backface-visibility: hidden;
         height: 72px;
         position: absolute;
         width: 400px;
         transform: translate3d(-50%, -50%, -36px) translateY(-200px) rotateX(270deg) rotateY(180deg); }
       .room.tomb .floor .face-left {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/floor-side.jpg");
+        background-image: url("../textures/floor-side.jpg");
         background-position: top center;
-        background-size: 128px;
+        background-size: 400px;
         backface-visibility: hidden;
         height: 72px;
         position: absolute;
         width: 400px;
         transform: translate3d(-50%, -50%, -36px) translateX(200px) rotateX(270deg) rotateY(90deg); }
       .room.tomb .floor .face-right {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/floor-side.jpg");
+        background-image: url("../textures/floor-side.jpg");
         background-position: top center;
-        background-size: 128px;
+        background-size: 400px;
         backface-visibility: hidden;
         height: 72px;
         position: absolute;
         width: 400px;
         transform: translate3d(-50%, -50%, -36px) translateX(-200px) rotateX(270deg) rotateY(270deg); }
-    .room.tomb .side-front, .room.tomb .side-back {
+    .room.tomb .side {
       position: absolute;
       left: 50%;
       top: 50%;
       transform-origin: 50%;
       transform-style: preserve-3d; }
-      .room.tomb .side-front:not(.side-door) .wall, .room.tomb .side-back:not(.side-door) .wall {
+      .room.tomb .side:not(.side-door) .wall {
         position: absolute;
         left: 50%;
         top: 50%;
         transform-origin: 50%;
         transform-style: preserve-3d; }
-        .room.tomb .side-front:not(.side-door) .wall .face-top, .room.tomb .side-back:not(.side-door) .wall .face-top {
-          background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
+        .room.tomb .side:not(.side-door) .wall .face-top {
+          background-image: url("../textures/wall-top.jpg");
           background-position: center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 36px;
+          height: 18px;
           position: absolute;
           width: 304px;
           transform: translate3d(-50%, -50%, 116px); }
-        .room.tomb .side-front:not(.side-door) .wall .face-bottom, .room.tomb .side-back:not(.side-door) .wall .face-bottom {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+        .room.tomb .side:not(.side-door) .wall .face-bottom {
+          background-image: url("../textures/none");
           background-position: center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 36px;
+          height: 18px;
           position: absolute;
           width: 304px;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
           transform: translate3d(-50%, -50%, 0); }
-        .room.tomb .side-front:not(.side-door) .wall .face-front, .room.tomb .side-back:not(.side-door) .wall .face-front {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
+        .room.tomb .side:not(.side-door) .wall .face-front {
+          background-image: url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 304px;
-          transform: translate3d(-50%, -50%, 58px) translateY(18px) rotateX(270deg); }
-        .room.tomb .side-front:not(.side-door) .wall .face-back, .room.tomb .side-back:not(.side-door) .wall .face-back {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
+          transform: translate3d(-50%, -50%, 58px) translateY(9px) rotateX(270deg); }
+        .room.tomb .side:not(.side-door) .wall .face-back {
+          background-image: url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 304px;
-          transform: translate3d(-50%, -50%, 58px) translateY(-18px) rotateX(270deg) rotateY(180deg); }
-        .room.tomb .side-front:not(.side-door) .wall .face-left, .room.tomb .side-back:not(.side-door) .wall .face-left {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
+          transform: translate3d(-50%, -50%, 58px) translateY(-9px) rotateX(270deg) rotateY(180deg); }
+        .room.tomb .side:not(.side-door) .wall .face-left {
+          background-image: url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
           height: 116px;
           position: absolute;
-          width: 36px;
+          width: 18px;
           transform: translate3d(-50%, -50%, 58px) translateX(152px) rotateX(270deg) rotateY(90deg); }
-        .room.tomb .side-front:not(.side-door) .wall .face-right, .room.tomb .side-back:not(.side-door) .wall .face-right {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
+        .room.tomb .side:not(.side-door) .wall .face-right {
+          background-image: url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
           height: 116px;
           position: absolute;
-          width: 36px;
+          width: 18px;
           transform: translate3d(-50%, -50%, 58px) translateX(-152px) rotateX(270deg) rotateY(270deg); }
-      .room.tomb .side-front.side-door .wall, .room.tomb .side-back.side-door .wall {
+      .room.tomb .side.side-door .wall {
         position: absolute;
         left: 50%;
         top: 50%;
         transform-origin: 50%;
         transform-style: preserve-3d; }
-        .room.tomb .side-front.side-door .wall .face-top, .room.tomb .side-back.side-door .wall .face-top {
-          background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
+        .room.tomb .side.side-door .wall .face-top {
+          background-image: url("../textures/wall-top.jpg");
           background-position: center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 36px;
+          height: 18px;
           position: absolute;
           width: 72px;
           transform: translate3d(-50%, -50%, 116px); }
-        .room.tomb .side-front.side-door .wall .face-bottom, .room.tomb .side-back.side-door .wall .face-bottom {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+        .room.tomb .side.side-door .wall .face-bottom {
+          background-image: url("../textures/none");
           background-position: center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 36px;
+          height: 18px;
           position: absolute;
           width: 72px;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
           transform: translate3d(-50%, -50%, 0); }
-        .room.tomb .side-front.side-door .wall .face-front, .room.tomb .side-back.side-door .wall .face-front {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
+        .room.tomb .side.side-door .wall .face-front {
+          background-image: url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 72px;
-          transform: translate3d(-50%, -50%, 58px) translateY(18px) rotateX(270deg); }
-        .room.tomb .side-front.side-door .wall .face-back, .room.tomb .side-back.side-door .wall .face-back {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
+          transform: translate3d(-50%, -50%, 58px) translateY(9px) rotateX(270deg); }
+        .room.tomb .side.side-door .wall .face-back {
+          background-image: url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
           height: 116px;
           position: absolute;
           width: 72px;
-          transform: translate3d(-50%, -50%, 58px) translateY(-18px) rotateX(270deg) rotateY(180deg); }
-        .room.tomb .side-front.side-door .wall .face-left, .room.tomb .side-back.side-door .wall .face-left {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
+          transform: translate3d(-50%, -50%, 58px) translateY(-9px) rotateX(270deg) rotateY(180deg); }
+        .room.tomb .side.side-door .wall .face-left {
+          background-image: url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
           height: 116px;
           position: absolute;
-          width: 36px;
+          width: 18px;
           transform: translate3d(-50%, -50%, 58px) translateX(36px) rotateX(270deg) rotateY(90deg); }
-        .room.tomb .side-front.side-door .wall .face-right, .room.tomb .side-back.side-door .wall .face-right {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
+        .room.tomb .side.side-door .wall .face-right {
+          background-image: url("../textures/wall-side.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
           height: 116px;
           position: absolute;
-          width: 36px;
+          width: 18px;
           transform: translate3d(-50%, -50%, 58px) translateX(-36px) rotateX(270deg) rotateY(270deg); }
-      .room.tomb .side-front.side-door .wall-left, .room.tomb .side-back.side-door .wall-left {
+      .room.tomb .side.side-door .wall-left {
         transform: translateX(-116px); }
-      .room.tomb .side-front.side-door .wall-right, .room.tomb .side-back.side-door .wall-right {
+      .room.tomb .side.side-door .wall-right {
         transform: translateX(116px); }
-      .room.tomb .side-front.side-door .pillar-left, .room.tomb .side-back.side-door .pillar-left {
+      .room.tomb .side.side-door .pillar-left {
         transform: translateX(-56px); }
-      .room.tomb .side-front.side-door .pillar-right, .room.tomb .side-back.side-door .pillar-right {
+      .room.tomb .side.side-door .pillar-right {
         transform: translateX(56px); }
-    .room.tomb .side-left, .room.tomb .side-right {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform-origin: 50%;
-      transform-style: preserve-3d; }
-      .room.tomb .side-left:not(.side-door) .wall, .room.tomb .side-right:not(.side-door) .wall {
+      .room.tomb .side.side-door .door {
         position: absolute;
         left: 50%;
         top: 50%;
         transform-origin: 50%;
         transform-style: preserve-3d; }
-        .room.tomb .side-left:not(.side-door) .wall .face-top, .room.tomb .side-right:not(.side-door) .wall .face-top {
-          background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
+        .room.tomb .side.side-door .door .face-top {
+          background-image: url("../textures/box-placeholder.jpg");
           background-position: center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 304px;
+          height: 16px;
           position: absolute;
-          width: 36px;
-          transform: translate3d(-50%, -50%, 116px); }
-        .room.tomb .side-left:not(.side-door) .wall .face-bottom, .room.tomb .side-right:not(.side-door) .wall .face-bottom {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+          width: 64px;
+          transform: translate3d(-50%, -50%, 96px); }
+        .room.tomb .side.side-door .door .face-bottom {
+          background-image: url("../textures/none");
           background-position: center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 304px;
+          height: 16px;
           position: absolute;
-          width: 36px;
+          width: 64px;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
           transform: translate3d(-50%, -50%, 0); }
-        .room.tomb .side-left:not(.side-door) .wall .face-front, .room.tomb .side-right:not(.side-door) .wall .face-front {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
+        .room.tomb .side.side-door .door .face-front {
+          background-image: url("../textures/box-placeholder.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 116px;
+          height: 96px;
           position: absolute;
-          width: 36px;
-          transform: translate3d(-50%, -50%, 58px) translateY(152px) rotateX(270deg); }
-        .room.tomb .side-left:not(.side-door) .wall .face-back, .room.tomb .side-right:not(.side-door) .wall .face-back {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
+          width: 64px;
+          transform: translate3d(-50%, -50%, 48px) translateY(8px) rotateX(270deg); }
+        .room.tomb .side.side-door .door .face-back {
+          background-image: url("../textures/box-placeholder.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 116px;
+          height: 96px;
           position: absolute;
-          width: 36px;
-          transform: translate3d(-50%, -50%, 58px) translateY(-152px) rotateX(270deg) rotateY(180deg); }
-        .room.tomb .side-left:not(.side-door) .wall .face-left, .room.tomb .side-right:not(.side-door) .wall .face-left {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
+          width: 64px;
+          transform: translate3d(-50%, -50%, 48px) translateY(-8px) rotateX(270deg) rotateY(180deg); }
+        .room.tomb .side.side-door .door .face-left {
+          background-image: url("../textures/box-placeholder.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 116px;
+          height: 96px;
           position: absolute;
-          width: 304px;
-          transform: translate3d(-50%, -50%, 58px) translateX(18px) rotateX(270deg) rotateY(90deg); }
-        .room.tomb .side-left:not(.side-door) .wall .face-right, .room.tomb .side-right:not(.side-door) .wall .face-right {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
+          width: 16px;
+          transform: translate3d(-50%, -50%, 48px) translateX(32px) rotateX(270deg) rotateY(90deg); }
+        .room.tomb .side.side-door .door .face-right {
+          background-image: url("../textures/box-placeholder.jpg");
           background-position: top center;
           background-size: 128px;
           backface-visibility: hidden;
-          height: 116px;
+          height: 96px;
           position: absolute;
-          width: 304px;
-          transform: translate3d(-50%, -50%, 58px) translateX(-18px) rotateX(270deg) rotateY(270deg); }
-      .room.tomb .side-left.side-door .wall, .room.tomb .side-right.side-door .wall {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform-origin: 50%;
-        transform-style: preserve-3d; }
-        .room.tomb .side-left.side-door .wall .face-top, .room.tomb .side-right.side-door .wall .face-top {
-          background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/wall-top.jpg");
-          background-position: center;
-          background-size: 128px;
-          backface-visibility: hidden;
-          height: 72px;
-          position: absolute;
-          width: 36px;
-          transform: translate3d(-50%, -50%, 116px); }
-        .room.tomb .side-left.side-door .wall .face-bottom, .room.tomb .side-right.side-door .wall .face-bottom {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
-          background-position: center;
-          background-size: 128px;
-          backface-visibility: hidden;
-          height: 72px;
-          position: absolute;
-          width: 36px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-          transform: translate3d(-50%, -50%, 0); }
-        .room.tomb .side-left.side-door .wall .face-front, .room.tomb .side-right.side-door .wall .face-front {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/wall-side.jpg");
-          background-position: top center;
-          background-size: 128px;
-          backface-visibility: hidden;
-          height: 116px;
-          position: absolute;
-          width: 36px;
-          transform: translate3d(-50%, -50%, 58px) translateY(36px) rotateX(270deg); }
-        .room.tomb .side-left.side-door .wall .face-back, .room.tomb .side-right.side-door .wall .face-back {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/wall-side.jpg");
-          background-position: top center;
-          background-size: 128px;
-          backface-visibility: hidden;
-          height: 116px;
-          position: absolute;
-          width: 36px;
-          transform: translate3d(-50%, -50%, 58px) translateY(-36px) rotateX(270deg) rotateY(180deg); }
-        .room.tomb .side-left.side-door .wall .face-left, .room.tomb .side-right.side-door .wall .face-left {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/wall-side.jpg");
-          background-position: top center;
-          background-size: 128px;
-          backface-visibility: hidden;
-          height: 116px;
-          position: absolute;
-          width: 72px;
-          transform: translate3d(-50%, -50%, 58px) translateX(18px) rotateX(270deg) rotateY(90deg); }
-        .room.tomb .side-left.side-door .wall .face-right, .room.tomb .side-right.side-door .wall .face-right {
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/wall-side.jpg");
-          background-position: top center;
-          background-size: 128px;
-          backface-visibility: hidden;
-          height: 116px;
-          position: absolute;
-          width: 72px;
-          transform: translate3d(-50%, -50%, 58px) translateX(-18px) rotateX(270deg) rotateY(270deg); }
-      .room.tomb .side-left.side-door .wall-left, .room.tomb .side-right.side-door .wall-left {
-        transform: translateY(-116px); }
-      .room.tomb .side-left.side-door .wall-right, .room.tomb .side-right.side-door .wall-right {
-        transform: translateY(116px); }
-      .room.tomb .side-left.side-door .pillar-left, .room.tomb .side-right.side-door .pillar-left {
-        transform: translateY(-56px); }
-      .room.tomb .side-left.side-door .pillar-right, .room.tomb .side-right.side-door .pillar-right {
-        transform: translateY(56px); }
+          width: 16px;
+          transform: translate3d(-50%, -50%, 48px) translateX(-32px) rotateX(270deg) rotateY(270deg); }
     .room.tomb .side-front {
       transform: translateY(-176px); }
     .room.tomb .side-back {
       transform: translateY(176px); }
     .room.tomb .side-left {
-      transform: translateX(-176px); }
+      transform: translateX(-176px) rotateZ(90deg); }
     .room.tomb .side-right {
-      transform: translateX(176px); }
+      transform: translateX(176px) rotateZ(90deg); }
     .room.tomb .pillar {
       position: absolute;
       left: 50%;
@@ -798,18 +642,18 @@ body {
       transform-origin: 50%;
       transform-style: preserve-3d; }
       .room.tomb .pillar .face-top {
-        background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/pillar-top.jpg");
+        background-image: url("../textures/pillar-top.jpg");
         background-position: center;
-        background-size: 128px;
+        background-size: cover;
         backface-visibility: hidden;
         height: 48px;
         position: absolute;
         width: 48px;
         transform: translate3d(-50%, -50%, 128px); }
       .room.tomb .pillar .face-bottom {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+        background-image: url("../textures/none");
         background-position: center;
-        background-size: 128px;
+        background-size: cover;
         backface-visibility: hidden;
         height: 48px;
         position: absolute;
@@ -817,36 +661,36 @@ body {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         transform: translate3d(-50%, -50%, 0); }
       .room.tomb .pillar .face-front {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/pillar-side.jpg");
+        background-image: url("../textures/pillar-side.jpg");
         background-position: top center;
-        background-size: 128px;
+        background-size: cover;
         backface-visibility: hidden;
         height: 128px;
         position: absolute;
         width: 48px;
         transform: translate3d(-50%, -50%, 64px) translateY(24px) rotateX(270deg); }
       .room.tomb .pillar .face-back {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/pillar-side.jpg");
+        background-image: url("../textures/pillar-side.jpg");
         background-position: top center;
-        background-size: 128px;
+        background-size: cover;
         backface-visibility: hidden;
         height: 128px;
         position: absolute;
         width: 48px;
         transform: translate3d(-50%, -50%, 64px) translateY(-24px) rotateX(270deg) rotateY(180deg); }
       .room.tomb .pillar .face-left {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/pillar-side.jpg");
+        background-image: url("../textures/pillar-side.jpg");
         background-position: top center;
-        background-size: 128px;
+        background-size: cover;
         backface-visibility: hidden;
         height: 128px;
         position: absolute;
         width: 48px;
         transform: translate3d(-50%, -50%, 64px) translateX(24px) rotateX(270deg) rotateY(90deg); }
       .room.tomb .pillar .face-right {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/pillar-side.jpg");
+        background-image: url("../textures/pillar-side.jpg");
         background-position: top center;
-        background-size: 128px;
+        background-size: cover;
         backface-visibility: hidden;
         height: 128px;
         position: absolute;
@@ -873,7 +717,7 @@ body {
   transform-style: preserve-3d;
   transform: translate3d(-100px, 175px, 0); }
   .bridge-1 .face-top {
-    background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/bridge-top.jpg");
+    background-image: url("../textures/bridge-top.jpg");
     background-position: center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -882,7 +726,7 @@ body {
     width: 128px;
     transform: translate3d(-50%, -50%, 0); }
   .bridge-1 .face-bottom {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+    background-image: url("../textures/none");
     background-position: center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -892,7 +736,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     transform: translate3d(-50%, -50%, -72px); }
   .bridge-1 .face-front {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/bridge-side.png");
+    background-image: url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -901,7 +745,7 @@ body {
     width: 128px;
     transform: translate3d(-50%, -50%, -36px) translateY(76px) rotateX(270deg); }
   .bridge-1 .face-back {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/bridge-side.png");
+    background-image: url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -910,7 +754,7 @@ body {
     width: 128px;
     transform: translate3d(-50%, -50%, -36px) translateY(-76px) rotateX(270deg) rotateY(180deg); }
   .bridge-1 .face-left {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/bridge-side.png");
+    background-image: url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -919,7 +763,7 @@ body {
     width: 152px;
     transform: translate3d(-50%, -50%, -36px) translateX(64px) rotateX(270deg) rotateY(90deg); }
   .bridge-1 .face-right {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/bridge-side.png");
+    background-image: url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -936,7 +780,7 @@ body {
   transform-style: preserve-3d;
   transform: translate3d(175px, -100px, 0); }
   .bridge-2 .face-top {
-    background-image: linear-gradient(to bottom, transparent, transparent), url("../textures/bridge-top.jpg");
+    background-image: url("../textures/bridge-top.jpg");
     background-position: center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -945,7 +789,7 @@ body {
     width: 152px;
     transform: translate3d(-50%, -50%, 0); }
   .bridge-2 .face-bottom {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../textures/none");
+    background-image: url("../textures/none");
     background-position: center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -955,7 +799,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     transform: translate3d(-50%, -50%, -72px); }
   .bridge-2 .face-front {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../textures/bridge-side.png");
+    background-image: url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -964,7 +808,7 @@ body {
     width: 152px;
     transform: translate3d(-50%, -50%, -36px) translateY(64px) rotateX(270deg); }
   .bridge-2 .face-back {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../textures/bridge-side.png");
+    background-image: url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -973,7 +817,7 @@ body {
     width: 152px;
     transform: translate3d(-50%, -50%, -36px) translateY(-64px) rotateX(270deg) rotateY(180deg); }
   .bridge-2 .face-left {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../textures/bridge-side.png");
+    background-image: url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
     backface-visibility: hidden;
@@ -982,7 +826,7 @@ body {
     width: 128px;
     transform: translate3d(-50%, -50%, -36px) translateX(76px) rotateX(270deg) rotateY(90deg); }
   .bridge-2 .face-right {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../textures/bridge-side.png");
+    background-image: url("../textures/bridge-side.png");
     background-position: top center;
     background-size: 128px;
     backface-visibility: hidden;

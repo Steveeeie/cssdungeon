@@ -7,13 +7,12 @@
   $texture-pillar-top: "pillar-top.jpg",
   $texture-pillar-sides: "pillar-side.jpg"
 ){
-
   $floor-depth: 72px;
   $door-size: 64px;
   $pillar-depth: 128px;
   $pillar-thickness: 48px;
   $wall-depth: 116px;
-  $wall-height: 36px;
+  $wall-height: 18px;
   $wall-width: $room-size - ($pillar-thickness * 2);
   $wall-width-door: ($room-size / 2) - ($door-size / 2) - ($pillar-thickness * 2);
   $snap-edge: ($room-size / 2) - ($pillar-thickness / 2);
@@ -27,12 +26,13 @@
       $height: $room-size,
       $width: $room-size,
       $texture: $texture-floor-top,
-      $texture-top: $texture-floor-sides
+      $texture-top: $texture-floor-sides,
+      $texture-size: 400px
     );
-    transform: translateZ(-1px);
+
   }
 
-  .side-front, .side-back{
+  .side{
     @include pivot;
     &:not(.side-door) .wall{
       @include box(
@@ -67,43 +67,13 @@
       .pillar-right{
         transform: translateX((($door-size / 2) + ($pillar-thickness / 2)));
       }
-    }
-  }
-
-  .side-left, .side-right{
-    @include pivot;
-    &:not(.side-door) .wall{
-      @include box(
-        $pivot-position: 'bottom',
-        $depth: $wall-depth,
-        $height: $wall-width,
-        $width: $wall-height,
-        $texture: $texture-wall-sides,
-        $texture-top: $texture-wall-top
-      );
-    }
-    &.side-door{
-      .wall{
+      .door{
         @include box(
-          $pivot-position: 'bottom',
-          $depth: $wall-depth,
-          $height: $wall-width-door,
-          $width: $wall-height,
-          $texture: $texture-wall-sides,
-          $texture-top: $texture-wall-top
+          $pivot-position: "bottom",
+          $height: 16px,
+          $depth: 96px,
+          $width: 64px
         );
-      }
-      .wall-left{
-        transform: translateY( - (($room-size / 2) - ($wall-width-door /2) - ($pillar-thickness)));
-      }
-      .wall-right{
-        transform: translateY((($room-size / 2) - ($wall-width-door /2) - ($pillar-thickness)));
-      }
-      .pillar-left{
-        transform: translateY( - (($door-size / 2) + ($pillar-thickness / 2)));
-      }
-      .pillar-right{
-        transform: translateY( (($door-size / 2) + ($pillar-thickness / 2)));
       }
     }
   }
@@ -117,11 +87,11 @@
   }
 
   .side-left{
-    transform: translateX(-$snap-edge);
+    transform: translateX(-$snap-edge) rotateZ(90deg);
   }
 
   .side-right{
-    transform: translateX($snap-edge);
+    transform: translateX($snap-edge) rotateZ(90deg);
   }
 
   .pillar{
@@ -131,7 +101,8 @@
       $height: $pillar-thickness,
       $width: $pillar-thickness,
       $texture: $texture-pillar-sides,
-      $texture-top: $texture-pillar-top
+      $texture-top: $texture-pillar-top,
+      $texture-size: cover
     );
   }
 
