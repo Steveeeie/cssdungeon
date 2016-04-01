@@ -1,0 +1,27 @@
+.pillar{
+  @include box(
+    $pivot-position-z: 'bottom',
+    $depth: $pillar-depth,
+    $height: $pillar-thickness,
+    $width: $pillar-thickness,
+    $texture: $texture-pillar-sides,
+    $texture-top: $texture-pillar-top,
+    $texture-size: cover
+  );
+}
+
+.pillar-top-left{
+  transform: translateY(-$snap-edge) translateX(-$snap-edge);
+}
+
+.pillar-top-right{
+  transform: translateY(-$snap-edge) translateX($snap-edge);
+}
+
+.pillar-bottom-left{
+  transform: translateY($snap-edge) translateX(-$snap-edge);
+}
+
+.pillar-bottom-right{
+  transform: translateY($snap-edge) translateX($snap-edge);
+}
