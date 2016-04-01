@@ -1,6 +1,6 @@
 .pillar{
   @include box(
-    $pivot-position: 'bottom',
+    $pivot-position-z: 'bottom',
     $depth: $pillar-depth,
     $height: $pillar-thickness,
     $width: $pillar-thickness,

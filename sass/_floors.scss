@@ -1,6 +1,6 @@
 .floor{
   @include box(
-    $pivot-position: 'top',
+    $pivot-position-z: 'top',
     $depth: $floor-depth,
     $height: $room-size,
     $width: $room-size,

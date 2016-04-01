@@ -178,59 +178,59 @@ body {
   transform-origin: 50%;
   transform-style: preserve-3d; }
   .door .face-top {
-    background-image: url("../textures/box-placeholder.jpg");
+    background-image: url("../textures/door-top.jpg");
     background-position: center;
-    background-size: 128px;
+    background-size: cover;
     backface-visibility: hidden;
-    height: 16px;
+    height: 8px;
     position: absolute;
     width: 64px;
     transform: translate3d(-50%, -50%, 96px); }
   .door .face-bottom {
     background-image: url("../textures/none");
     background-position: center;
-    background-size: 128px;
+    background-size: cover;
     backface-visibility: hidden;
-    height: 16px;
+    height: 8px;
     position: absolute;
     width: 64px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     transform: translate3d(-50%, -50%, 0); }
   .door .face-front {
-    background-image: url("../textures/box-placeholder.jpg");
+    background-image: url("../textures/door-side.jpg");
     background-position: top center;
-    background-size: 128px;
+    background-size: cover;
     backface-visibility: hidden;
     height: 96px;
     position: absolute;
     width: 64px;
-    transform: translate3d(-50%, -50%, 48px) translateY(8px) rotateX(270deg); }
+    transform: translate3d(-50%, -50%, 48px) translateY(4px) rotateX(270deg); }
   .door .face-back {
-    background-image: url("../textures/box-placeholder.jpg");
+    background-image: url("../textures/door-side.jpg");
     background-position: top center;
-    background-size: 128px;
+    background-size: cover;
     backface-visibility: hidden;
     height: 96px;
     position: absolute;
     width: 64px;
-    transform: translate3d(-50%, -50%, 48px) translateY(-8px) rotateX(270deg) rotateY(180deg); }
+    transform: translate3d(-50%, -50%, 48px) translateY(-4px) rotateX(270deg) rotateY(180deg); }
   .door .face-left {
-    background-image: url("../textures/box-placeholder.jpg");
+    background-image: url("../textures/door-side.jpg");
     background-position: top center;
-    background-size: 128px;
+    background-size: cover;
     backface-visibility: hidden;
     height: 96px;
     position: absolute;
-    width: 16px;
+    width: 8px;
     transform: translate3d(-50%, -50%, 48px) translateX(32px) rotateX(270deg) rotateY(90deg); }
   .door .face-right {
-    background-image: url("../textures/box-placeholder.jpg");
+    background-image: url("../textures/door-side.jpg");
     background-position: top center;
-    background-size: 128px;
+    background-size: cover;
     backface-visibility: hidden;
     height: 96px;
     position: absolute;
-    width: 16px;
+    width: 8px;
     transform: translate3d(-50%, -50%, 48px) translateX(-32px) rotateX(270deg) rotateY(270deg); }
 
 .wall-door {

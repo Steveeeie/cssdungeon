@@ -1,6 +1,6 @@
 .wall{
   @include box(
-    $pivot-position: 'bottom',
+    $pivot-position-z: 'bottom',
     $depth: $wall-depth,
     $height: $wall-height,
     $width: $wall-width,
