@@ -6,10 +6,7 @@
   $height: 128px,
   $width: 128px
 ){
-  background-image: linear-gradient(to bottom,
-    rgba(0, 0, 0, $shade),
-    rgba(0, 0, 0, $shade)),
-    url('../textures/' + $texture);
+  background-image: url('../textures/' + $texture);
   background-position: $texture-position;
   background-size: $texture-size;
   backface-visibility: hidden;

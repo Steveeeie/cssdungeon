@@ -32,7 +32,7 @@
 
   }
 
-  .side-front, .side-back{
+  .side{
     @include pivot;
     &:not(.side-door) .wall{
       @include box(
@@ -78,52 +78,6 @@
     }
   }
 
-  .side-left, .side-right{
-    @include pivot;
-    &:not(.side-door) .wall{
-      @include box(
-        $pivot-position: 'bottom',
-        $depth: $wall-depth,
-        $height: $wall-width,
-        $width: $wall-height,
-        $texture: $texture-wall-sides,
-        $texture-top: $texture-wall-top
-      );
-    }
-    &.side-door{
-      .wall{
-        @include box(
-          $pivot-position: 'bottom',
-          $depth: $wall-depth,
-          $height: $wall-width-door,
-          $width: $wall-height,
-          $texture: $texture-wall-sides,
-          $texture-top: $texture-wall-top
-        );
-      }
-      .wall-left{
-        transform: translateY( - (($room-size / 2) - ($wall-width-door /2) - ($pillar-thickness)));
-      }
-      .wall-right{
-        transform: translateY((($room-size / 2) - ($wall-width-door /2) - ($pillar-thickness)));
-      }
-      .pillar-left{
-        transform: translateY( - (($door-size / 2) + ($pillar-thickness / 2)));
-      }
-      .pillar-right{
-        transform: translateY( (($door-size / 2) + ($pillar-thickness / 2)));
-      }
-      .door{
-        @include box(
-          $pivot-position: "bottom",
-          $height: 64px,
-          $depth: 96px,
-          $width: 16px
-        );
-      }
-    }
-  }
-
   .side-front{
     transform: translateY(-$snap-edge);
   }
@@ -133,11 +87,11 @@
   }
 
   .side-left{
-    transform: translateX(-$snap-edge);
+    transform: translateX(-$snap-edge) rotateZ(90deg);
   }
 
   .side-right{
-    transform: translateX($snap-edge);
+    transform: translateX($snap-edge) rotateZ(90deg);
   }
 
   .pillar{
