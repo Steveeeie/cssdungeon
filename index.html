@@ -9,96 +9,35 @@
 
     <div class="scene">
 
-      <div class="room tomb">
-        <div class="floor"></div>
-        <div class="side side-front">
-          <div class="wall"></div>
+      <div class="room">
+        <div class="floor" data-obj-type="box"></div>
+        <div class="side side-top">
+          <div class="wall" data-obj-type="box"></div>
         </div>
-        <div class="side side-back side-door">
-          <div class="wall wall-left"></div>
-          <div class="wall wall-right"></div>
-          <div class="pillar pillar-left"></div>
-          <div class="pillar pillar-right"></div>
-          <div class="door"></div>
+        <div class="side side-bottom">
+          <div class="wall" data-obj-type="box"></div>
         </div>
         <div class="side side-left">
-          <div class="wall"></div>
-        </div>
-        <div class="side side-right side-door">
-          <div class="wall wall-left"></div>
-          <div class="wall wall-right"></div>
-          <div class="pillar pillar-left"></div>
-          <div class="pillar pillar-right"></div>
-          <div class="door"></div>
-        </div>
-        <div class="pillar pillar-top-left"></div>
-        <div class="pillar pillar-top-right"></div>
-        <div class="pillar pillar-bottom-left"></div>
-        <div class="pillar pillar-bottom-right"></div>
-      </div>
-
-      <div class="bridge bridge-1"></div>
-
-      <div class="room dungeon">
-        <div class="floor"></div>
-        <div class="side side-front">
-          <div class="wall"></div>
-        </div>
-        <div class="side side-back">
-          <div class="wall"></div>
-        </div>
-        <div class="side side-left side-door">
-          <div class="wall wall-left"></div>
-          <div class="wall wall-right"></div>
-          <div class="pillar pillar-left"></div>
-          <div class="pillar pillar-right"></div>
-          <div class="door"></div>
+          <div class="wall" data-obj-type="box"></div>
         </div>
         <div class="side side-right">
-          <div class="wall"></div>
+          <div class="wall-door wall-door-left" data-obj-type="box"></div>
+          <div class="wall-door wall-door-right" data-obj-type="box"></div>
+          <div class="pillar pillar-door-left" data-obj-type="box"></div>
+          <div class="pillar pillar-door-right" data-obj-type="box"></div>
+          <div class="door" data-obj-type="box"></div>
         </div>
-        <div class="pillar pillar-top-left"></div>
-        <div class="pillar pillar-top-right"></div>
-        <div class="pillar pillar-bottom-left"></div>
-        <div class="pillar pillar-bottom-right"></div>
-      </div>
-
-      <div class="bridge bridge-2"></div>
-
-      <div class="room kitchen">
-        <div class="floor"></div>
-        <div class="side side-front side-door">
-          <div class="wall wall-left"></div>
-          <div class="wall wall-right"></div>
-          <div class="pillar pillar-left"></div>
-          <div class="pillar pillar-right"></div>
-          <div class="door"></div>
-        </div>
-        <div class="side side-back">
-          <div class="wall"></div>
-        </div>
-        <div class="side side-left">
-          <div class="wall"></div>
-        </div>
-        <div class="side side-right">
-          <div class="wall"></div>
-        </div>
-        <div class="pillar pillar-top-left"></div>
-        <div class="pillar pillar-top-right"></div>
-        <div class="pillar pillar-bottom-left"></div>
-        <div class="pillar pillar-bottom-right"></div>
+        <div class="pillar pillar-top-left" data-obj-type="box"></div>
+        <div class="pillar pillar-top-right" data-obj-type="box"></div>
+        <div class="pillar pillar-bottom-left" data-obj-type="box"></div>
+        <div class="pillar pillar-bottom-right" data-obj-type="box"></div>
       </div>
 
     </div>
 
     <script>
-
-      var domReady = function(callback) {
-        document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
-      };
-
       (function(){
-        var boxes = document.querySelectorAll(".pillar, .wall, .wall-small, .floor, .bridge, .door");
+        var boxes = document.querySelectorAll('[data-obj-type="box"]');
         for(box in boxes){
           var faces = ['top', 'bottom', 'front', 'back', 'left', 'right'];
           for(face in faces){
@@ -107,7 +46,6 @@
           }
         }
       })();
-
     </script>
 
   </body>

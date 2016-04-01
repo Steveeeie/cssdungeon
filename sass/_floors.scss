@@ -1,0 +1,11 @@
+.floor{
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: $floor-depth,
+    $height: $room-size,
+    $width: $room-size,
+    $texture: $texture-floor-top,
+    $texture-top: $texture-floor-sides,
+    $texture-size: 400px
+  );
+}

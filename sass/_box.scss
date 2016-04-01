@@ -1,5 +1,7 @@
 @mixin box(
-  $pivot-position: "center",
+  $pivot-position-x: "center",
+  $pivot-position-y: "center",
+  $pivot-position-z: "center",
   $depth: 128px,
   $height: 128px,
   $width: 128px,
@@ -13,11 +15,11 @@
   $texture-size: 128px
 ){
 
-  @if($pivot-position == 'top'){
+  @if($pivot-position-z == 'top'){
     $top-z: 0;
     $bottom-z: - $depth;
     $sides-z: - $depth /2;
-  }@else if($pivot-position == 'center'){
+  }@else if($pivot-position-z == 'center'){
     $top-z: $depth / 2;
     $bottom-z: - $depth / 2;
     $sides-z: 0;
@@ -31,33 +33,46 @@
 
   .face-top{
     @include face(0, $texture-top, $texture-size, center, $height, $width);
-    transform: translate3d(-50%, -50%, $top-z);
+    transform:
+    translate3d(-50%, -50%, $top-z);
   }
 
   .face-bottom{
     @include face(0.9, none, $texture-size, center, $height, $width);
     box-shadow: 0 0 10px rgba(0,0,0,0.8);
-    transform: translate3d(-50%, -50%, $bottom-z);
+    transform:
+    translate3d(-50%, -50%, $bottom-z);
   }
 
   .face-front{
     @include face(0.2, $texture-front, $texture-size, top center, $depth, $width);
-    transform: translate3d(-50%, -50%, $sides-z) translateY($height / 2) rotateX(270deg);
+    transform: translate3d(-50%, -50%, $sides-z)
+    translateY($height / 2)
+    rotateX(270deg);
   }
 
   .face-back{
     @include face(0.4, $texture-back, $texture-size, top center, $depth, $width);
-    transform: translate3d(-50%, -50%, $sides-z) translateY(- $height / 2) rotateX(270deg) rotateY(180deg);
+    transform: translate3d(-50%, -50%, $sides-z)
+    translateY(- $height / 2)
+    rotateX(270deg)
+    rotateY(180deg);
   }
 
   .face-left {
     @include face(0.6, $texture-left, $texture-size, top center, $depth, $height);
-    transform: translate3d(-50%, -50%, $sides-z) translateX($width / 2) rotateX(270deg) rotateY(90deg);
+    transform: translate3d(-50%, -50%, $sides-z)
+    translateX($width / 2)
+    rotateX(270deg)
+    rotateY(90deg);
   }
 
   .face-right{
     @include face(0.8, $texture-right, $texture-size, top center, $depth, $height);
-    transform: translate3d(-50%, -50%, $sides-z) translateX( - $width / 2) rotateX(270deg) rotateY(270deg);
+    transform: translate3d(-50%, -50%, $sides-z)
+    translateX( - $width / 2)
+    rotateX(270deg)
+    rotateY(270deg);
   }
 
 }

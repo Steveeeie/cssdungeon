@@ -1,17 +1,23 @@
 .room{
-  @include room-asm( $room-size: 300px );
+  @include pivot;
+}
 
-  &.tomb{
-    @include room-asm( $room-size: 400px );
-    transform: translate3D(-100px, -100px, 0);
-  }
+.side{
+  @include pivot;
+}
 
-  &.dungeon{
-    transform: translate3D(400px, -100px, 0);
-  }
+.side-top{
+  transform: translateY(-$snap-edge);
+}
 
-  &.kitchen{
-    transform: translate3D(-100px, 400px, 0);
-  }
+.side-bottom{
+  transform: translateY($snap-edge);
+}
 
+.side-left{
+  transform: translateX(-$snap-edge) rotateZ(90deg);
+}
+
+.side-right{
+  transform: translateX($snap-edge) rotateZ(90deg);
 }
