@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>CSS Dungeon</title>
-    <link href="css/cssdungeon.css" rel="stylesheet"/>
+    <link href="css/cssdungeon.min.css" rel="stylesheet"/>
   </head>
 
   <body>
@@ -37,14 +37,25 @@
 
     <script>
       (function(){
+
+        //Append faces to all boxes.
         var boxes = document.querySelectorAll('[data-obj-type="box"]');
-        for(box in boxes){
+        for (var box = 0; box < boxes.length; box++) {
           var faces = ['top', 'bottom', 'front', 'back', 'left', 'right'];
-          for(face in faces){
+          for (var face = 0; face < faces.length; face++) {
             var faceMarkup = '<div class="face face-' + faces[face] + '"></div>';
             boxes[box].insertAdjacentHTML('beforeend', faceMarkup);
           }
         }
+
+        //Open door on click.
+        var doors = document.querySelectorAll('.door');
+        for (var i = 0; i < doors.length; i++) {
+          doors[i].onclick = function(){
+            this.classList.toggle('door--open')
+          };
+        }
+
       })();
     </script>
 
