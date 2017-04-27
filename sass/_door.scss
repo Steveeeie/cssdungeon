@@ -2,6 +2,7 @@
   @include box(
     $pivot-position-z: "bottom",
     $pivot-position-x: "bottom",
+    $pivot-position-y: "bottom",
     $height: 8px,
     $depth: 96px,
     $width: 64px,
@@ -9,6 +10,13 @@
     $texture-top: $texture-door-top,
     $texture-size: cover
   );
+  cursor: pointer;
+  transform: translateX(32px) rotateZ(0deg);
+  transition: transform ease-in-out 200ms;
+}
+
+.door--open{
+  transform: translateX(32px) rotateZ(-70deg);
 }
 
 .wall-door{
