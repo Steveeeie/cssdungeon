@@ -5,6 +5,7 @@
   $depth: 128px,
   $height: 128px,
   $width: 128px,
+  $shadow-bottom: true,
   $texture: "box-placeholder.jpg",
   $texture-top: $texture,
   $texture-bottom: $texture,
@@ -12,7 +13,16 @@
   $texture-right: $texture,
   $texture-front: $texture,
   $texture-back: $texture,
-  $texture-size: 128px
+  $texture-size: 128px,
+  $top-x: 0,
+  $bottom-x: 0,
+  $sides-x: 0,
+  $top-y: 0,
+  $bottom-y: 0,
+  $sides-y: 0,
+  $top-z: 0,
+  $bottom-z: 0,
+  $sides-z: 0
 ){
 
   @if($pivot-position-z == 'top'){
@@ -29,48 +39,76 @@
     $sides-z: $depth /2;
   }
 
+  @if($pivot-position-y == 'top'){
+    $top-y: 0;
+    $bottom-y: 0;
+    $sides-y: calc( -50% + #{$height / 2});
+  }@else if($pivot-position-y == 'center'){
+    $top-y: -50%;
+    $bottom-y: -50%;
+    $sides-y: -50%;
+  }@else{
+    $top-y: -$height;
+    $bottom-y: -$height;
+    $sides-y: calc( -50% - #{$height / 2});
+  }
+
+  @if($pivot-position-x == 'left'){
+    $top-x: 0;
+    $bottom-x: 0;
+    $sides-x: calc( -50% + #{$width / 2});
+  }@else if($pivot-position-x == 'center'){
+    $top-x: -50%;
+    $bottom-x: -50%;
+    $sides-x: -50%;
+  }@else{
+    $top-x: -$width;
+    $bottom-x: -$width;
+    $sides-x: calc( -50% - #{$width / 2});
+  }
+
   @include pivot;
 
   .face-top{
-    @include face(0, $texture-top, $texture-size, center, $height, $width);
-    transform:
-    translate3d(-50%, -50%, $top-z);
+    @include face($texture-top, $texture-size, center, $height, $width);
+    transform: translate3d($top-x, $top-y, $top-z);
   }
 
   .face-bottom{
-    @include face(0.9, none, $texture-size, center, $height, $width);
-    box-shadow: 0 0 10px rgba(0,0,0,0.8);
-    transform:
-    translate3d(-50%, -50%, $bottom-z);
+    @include face($texture-bottom, $texture-size, center, $height, $width);
+    transform: translate3d($bottom-x, $bottom-y, $bottom-z);
+    @if($shadow-bottom){
+      box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
   }
 
   .face-front{
-    @include face(0.2, $texture-front, $texture-size, top center, $depth, $width);
-    transform: translate3d(-50%, -50%, $sides-z)
-    translateY($height / 2)
+    @include face($texture-front, $texture-size, top center, $depth, $width);
+    transform: translate3d($sides-x, $sides-y, $sides-z)
+    translateY( $height / 2 )
     rotateX(270deg);
   }
 
   .face-back{
-    @include face(0.4, $texture-back, $texture-size, top center, $depth, $width);
-    transform: translate3d(-50%, -50%, $sides-z)
-    translateY(- $height / 2)
+    @include face($texture-back, $texture-size, top center, $depth, $width);
+    transform: translate3d($sides-x, $sides-y, $sides-z)
+    translateY( -$height / 2 )
     rotateX(270deg)
     rotateY(180deg);
   }
 
   .face-left {
-    @include face(0.6, $texture-left, $texture-size, top center, $depth, $height);
-    transform: translate3d(-50%, -50%, $sides-z)
-    translateX($width / 2)
+    @include face($texture-left, $texture-size, top center, $depth, $height);
+    transform: translate3d($sides-x, $sides-y, $sides-z)
+    translateX( $width / 2 )
     rotateX(270deg)
     rotateY(90deg);
   }
 
   .face-right{
-    @include face(0.8, $texture-right, $texture-size, top center, $depth, $height);
-    transform: translate3d(-50%, -50%, $sides-z)
-    translateX( - $width / 2)
+    @include face($texture-right, $texture-size, top center, $depth, $height);
+    transform: translate3d($sides-x, $sides-y, $sides-z)
+    translateX( -$width / 2 )
     rotateX(270deg)
     rotateY(270deg);
   }
