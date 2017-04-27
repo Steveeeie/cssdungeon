@@ -1,6 +1,5 @@
 @mixin face(
-  $shade: 0,
-  $texture: 'face-placeholder',
+  $texture: 'face-placeholder.jpg',
   $texture-size: 128px,
   $texture-position: 'center',
   $height: 128px,
@@ -9,8 +8,10 @@
   background-image: url('../textures/' + $texture);
   background-position: $texture-position;
   background-size: $texture-size;
-  backface-visibility: hidden;
   height: $height;
   position: absolute;
   width: $width;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
 }
