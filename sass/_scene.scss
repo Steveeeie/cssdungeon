@@ -11,10 +11,10 @@ body {
 .scene{
   @include pivot;
   transform: rotateX(45deg) rotateZ(45deg);
-  animation: spin 30s infinite linear;
+  animation: sceneSpin 50s infinite linear;
 }
 
-@keyframes spin{
+@keyframes sceneSpin{
   from{
     transform: rotateX(45deg) rotateZ(45deg);
   }to{
